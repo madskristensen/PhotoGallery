@@ -1,0 +1,29 @@
+﻿@page "{albumName}/{photoName}/{handler?}"
+@model PhotoModel
+@{
+    var albumName = Model.Photo.Album.Name;
+    var photoName = Model.Photo.DisplayName;
+}
+
+<form method="post" if-authorized id="admin">
+    <input type="text" name="name" id="name" value="@Model.Photo.DisplayName" />
+    <input type="submit" vale="Change name" asp-page-handler="rename" value="Rename photo" />
+
+    <input type="submit" id="deletephoto" class="delete" asp-page-handler="delete" title="Delete photo..." value="🗙" />
+</form>
+
+<div id="title">
+    <h2>@Model.Photo.DisplayName</h2>
+    <span>in <a href="/albums/@Model.Photo.Album.UrlName">@Model.Photo.Album.Name</a></span>
+    <a href="@Model.Photo.DownloadLink">Download original</a>
+</div>
+
+<figure class="photo" itemscope itemtype="http://schema.org/CreativeWork">
+    <img photo="@Model.Photo" type="Full" itemprop="image" />
+    <figcaption itemprop="name">@Model.Photo.DisplayName</figcaption>
+</figure>
+
+@section scripts{
+    <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
+    <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+}

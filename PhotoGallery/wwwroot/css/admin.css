@@ -1,0 +1,55 @@
+﻿#admin {
+    margin: 40px 0;
+    padding: 10px;
+    background: lightgray;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+}
+
+    #admin:before {
+        content: "Edit";
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: -19px;
+        background: lightgray;
+        padding: 0 10px;
+        border-radius: 3px;
+    }
+
+    #admin input {
+        padding: 3px 7px;
+        font: inherit;
+    }
+
+        #admin input[type=text],
+        #admin input[type=file] {
+            width: 220px;
+        }
+
+        #admin input[type=file] {
+            background: lightgray;
+        }
+
+        #admin input[type=submit] {
+            background-color: dodgerblue;
+            color: white;
+            border: 1px solid gray;
+        }
+
+        #admin input.delete {
+            float: right;
+            background: transparent;
+            color: crimson;
+            font-size: 1.3em;
+            font-weight: bold;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        #admin input[disabled] {
+            background-color: #999;
+            color: #f1f1f1;
+        }
