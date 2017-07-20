@@ -10,6 +10,13 @@
     <input type="submit" id="newalbum" value="New album">
 </form>
 
+@{
+    if (ac.Albums.Count == 0)
+    {
+        <p>There are no albums yet. <a asp-page="Login">Sign in</a> to create new albums and upload photos.</p>
+    }
+}
+
 <section class="albumlist">
     @{
         foreach (Album album in ac.Albums)

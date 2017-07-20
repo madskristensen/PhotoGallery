@@ -22,6 +22,9 @@ namespace PhotoGallery.Models
         private void Initialize(string contentPath)
         {
             var root = Path.Combine(contentPath, "albums");
+            if (!Directory.Exists(root))
+                return;
+
             var albumPaths = Directory.EnumerateDirectories(root);
 
             foreach (string albumPath in albumPaths)
