@@ -5,7 +5,7 @@
     var ost = Model.Album.Name;
 }
 
-<form if-authorized method="post" enctype="multipart/form-data">
+<form if-authorized method="post" id="admin" enctype="multipart/form-data">
     <label for="files" aria-hidden="true">Upload photos:</label>
     <input type="file" id="files" name="files" multiple accept="image/*" />
     <input type="submit" asp-page-handler="upload" id="btnfiles" disabled value="Upload photos" />
