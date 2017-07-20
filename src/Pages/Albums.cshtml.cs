@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PhotoGallery.Models;
-using PhotoGallery.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,9 +29,7 @@ namespace PhotoGallery.Pages
 
         public void OnGet(string name)
         {
-            var ost = name.ToString();
-            System.Diagnostics.Debug.Write(ost);
-            Album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(ost, StringComparison.OrdinalIgnoreCase));
+            Album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             ViewData["Title"] = Album.Name;
         }
 
@@ -70,26 +67,25 @@ namespace PhotoGallery.Pages
         [Authorize]
         public async Task<IActionResult> OnPostUpload(string name, ICollection<IFormFile> files)
         {
-            foreach (var file in files)
+            foreach (var file in files.Where(f => _ac.IsImageFile(f.FileName)))
             {
-                if (file.Length > 0)
+                var album = _ac.Albums.FirstOrDefault(a => a.UrlName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                string path = Path.Combine(_environment.WebRootPath, "albums", album.Name, Path.GetFileName(file.FileName));
+
+                if (System.IO.File.Exists(path))
                 {
-                    var album = _ac.Albums.FirstOrDefault(a => a.UrlName.Equals(name, StringComparison.OrdinalIgnoreCase));
-                    string path = Path.Combine(_environment.WebRootPath, "albums", album.Name, file.FileName);
-
-                    if (System.IO.File.Exists(path))
-                        path = Path.ChangeExtension(path, file.GetHashCode() + Path.GetExtension(path));
-
-                    using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
-                    {
-                        await file.CopyToAsync(stream);
-                    }
-
-                    _processor.CreateThumbnails(name, path);
-
-                    var photo = new Photo(album, new FileInfo(path));
-                    album.Photos.Insert(0, photo);
+                    path = Path.ChangeExtension(path, file.GetHashCode() + Path.GetExtension(path));
                 }
+
+                using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                _processor.CreateThumbnails(name, path);
+
+                var photo = new Photo(album, new FileInfo(path));
+                album.Photos.Insert(0, photo);
             }
 
             return new RedirectResult($"~/albums/{name}/");

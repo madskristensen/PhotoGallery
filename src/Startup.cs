@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -45,6 +46,10 @@ namespace PhotoGallery
             services.AddResponseCaching();
             services.AddSingleton<AlbumCollection>();
             services.AddSingleton<ImageProcessor>();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
             services.AddCookieAuthentication(o =>
             {
                 o.LoginPath = "/admin/login";
@@ -65,7 +70,7 @@ namespace PhotoGallery
             }
 
             app.UseAuthentication();
-            app.UseResponseCaching();
+            //app.UseResponseCaching();
 
             app.UseStaticFiles(new StaticFileOptions()
             {

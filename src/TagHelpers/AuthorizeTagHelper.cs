@@ -11,6 +11,8 @@ namespace PhotoGallery.TagHelpers
         [ViewContext]
         public ViewContext ViewContext { get; set; }
 
+        public override int Order => int.MinValue;
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (!ViewContext.HttpContext.User.Identity.IsAuthenticated)

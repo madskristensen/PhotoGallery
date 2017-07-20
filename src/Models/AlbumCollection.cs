@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace PhotoGallery.Models
     public class AlbumCollection
     {
         private IHostingEnvironment _environment;
+        private static readonly string[] _extensions = { ".jpg", ".jpeg", ".gif", ".png" };
 
         public AlbumCollection(IHostingEnvironment environment)
         {
@@ -18,6 +20,12 @@ namespace PhotoGallery.Models
         }
 
         public List<Album> Albums { get; private set; }
+
+        public bool IsImageFile(string file)
+        {
+            string ext = Path.GetExtension(file);
+            return _extensions.Contains(ext, StringComparer.OrdinalIgnoreCase);
+        }
 
         private void Initialize(string contentPath)
         {
@@ -41,7 +49,8 @@ namespace PhotoGallery.Models
             var album = new Album(albumPath);
             var directory = new DirectoryInfo(albumPath);
             var photos = directory.EnumerateFiles()
-                .OrderByDescending(f => f.LastWriteTime)
+                .Where(f => IsImageFile(f.FullName))
+                //.OrderByDescending(f => f.LastWriteTime)
                 .Select(a => new Photo(album, a));
 
             album.Photos.AddRange(photos);
