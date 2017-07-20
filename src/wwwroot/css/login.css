@@ -1,0 +1,26 @@
+﻿#login {
+    width: 300px;
+    margin: 0 auto;
+}
+
+    #login fieldset {
+        border: 0;
+    }
+
+    #login legend {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    #login input:not([type=submit]) {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 3px 7px;
+        border: 1px solid gray;
+        font: inherit;
+    }
+
+    #login input[type=submit] {
+        margin-top: 10px;
+    }

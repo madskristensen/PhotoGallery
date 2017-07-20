@@ -1,0 +1,42 @@
+﻿@page "{name}/{handler?}"
+@model AlbumsModel
+
+@{
+    var ost = Model.Album.Name;
+}
+
+<div id="admin" if-authorized>
+    <form method="post" enctype="multipart/form-data">
+        <label for="files" aria-hidden="true">Upload photos:</label>
+        <input type="file" id="files" name="files" multiple accept="image/*" />
+        <input type="submit" asp-page-handler="upload" id="btnfiles" disabled value="Upload photos" />
+
+        <input type="submit" asp-page-handler="delete" id="deletealbum" title="Delete album..." class="delete" value="🗙" />
+    </form>
+</div>
+
+<div id="title">
+    <h2>@Model.Album.Name</h2>
+</div>
+
+<section class="photolist">
+    @{
+        foreach (Photo photo in Model.Album.Photos)
+        {
+            <a href="@photo.Link">
+                <figure class="album" itemscope itemtype="http://schema.org/CreativeWork">
+                    <img photo="@photo" Type="Thumbnail" itemprop="image" />
+                    <figcaption itemprop="name">@photo.DisplayName</figcaption>
+                </figure>
+            </a>
+        }
+    }
+</section>
+
+@section scripts {
+    <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
+}
+
+@section styles {
+    <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+}

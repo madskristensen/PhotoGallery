@@ -1,0 +1,50 @@
+﻿@page
+@inject AlbumCollection ac
+@{
+    ViewData["Title"] = "Albums";
+}
+
+<form id="admin" if-authorized method="post" action="~/albums/new/create/">
+    <label for="name" aria-hidden="true">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Album name" required />
+    <input type="submit" id="newalbum" value="New album">
+</form>
+
+@if (ac.Albums.Count == 0)
+{
+    <p>There are no albums yet. <a asp-page="Login">Sign in</a> to create new albums and upload photos.</p>
+}
+
+<section class="albumlist">
+    @{
+        foreach (Album album in ac.Albums)
+        {
+            var photo = album.CoverPhoto;
+            if (photo != null)
+            {
+                <a href="/albums/@album.UrlName/">
+                    <figure title="@album.Name" data-count="@album.Photos.Count" itemscope itemtype="http://schema.org/CreativeWork">
+                        <img photo="@photo" type="Cover" itemprop="image" />
+                        <figcaption itemprop="name">@album.Name</figcaption>
+                    </figure>
+                </a>
+            }
+            else
+            {
+                <a href="/albums/@album.Name/">
+                    <figure title="@album.Name" data-count="@album.Photos.Count">
+                        <img src="~/img/_.gif" alt="Empty album" />
+                    </figure>
+                </a>
+            }
+        }
+    }
+</section>
+
+@section scripts {
+    <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
+}
+
+@section styles {
+    <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+}
