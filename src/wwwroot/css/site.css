@@ -68,11 +68,11 @@ figure {
         display: block;
         width: 100%;
         opacity: 1;
-        transition: opacity 0.3s;
+        transition: opacity 1s;
     }
 
         /*This will fade the images into view as they are lazy loaded */
-        figure img[data-srcset] {
+        figure img[data-echo] {
             opacity: 0;
         }
 
