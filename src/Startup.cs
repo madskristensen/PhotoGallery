@@ -49,6 +49,7 @@ namespace PhotoGallery
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             });
             services.AddCookieAuthentication(o =>
             {

@@ -1,9 +1,8 @@
 ﻿#admin {
-    margin: 40px 0;
+    margin: 40px 0 20px 0;
     padding: 10px;
     background: lightgray;
     border-radius: 5px;
-    /*display: block;*/
     position: relative;
 }
 
@@ -21,6 +20,7 @@
     #admin input {
         padding: 3px 7px;
         font: inherit;
+        border: 1px solid gray;
     }
 
         #admin input[type=text],
@@ -30,12 +30,12 @@
 
         #admin input[type=file] {
             background: lightgray;
+            border: none;
         }
 
         #admin input[type=submit] {
             background-color: dodgerblue;
             color: white;
-            border: 1px solid gray;
         }
 
         #admin input[disabled] {
