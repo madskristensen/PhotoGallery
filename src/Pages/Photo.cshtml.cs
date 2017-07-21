@@ -37,22 +37,20 @@ namespace PhotoGallery.Pages
             var newPhotoPath = new FileInfo(Path.Combine(album.AbsolutePath, name));
             int index = album.Photos.IndexOf(Photo);
 
-            System.IO.File.Copy(Photo.AbsolutePath, newPhotoPath.FullName, true);
+            System.IO.File.Move(Photo.AbsolutePath, newPhotoPath.FullName);
             var newPhoto = new Photo(album, newPhotoPath);
 
             album.Photos.Insert(index, newPhoto);
             album.Photos.RemoveAt(index + 1);
 
-            if (System.IO.File.Exists(Photo.AbsolutePath))
-            {
-                System.IO.File.Delete(Photo.AbsolutePath);
-                string folder = Path.Combine(album.AbsolutePath, "thumbnail");
-                var pattern = $"{Photo.DisplayName}-*x*{Path.GetExtension(Photo.AbsolutePath)}";
+            // Rename thumbnails
+            string folder = Path.Combine(album.AbsolutePath, "thumbnail");
+            var pattern = $"{Photo.DisplayName}-*x*{Path.GetExtension(Photo.AbsolutePath)}";
 
-                foreach (var file in Directory.EnumerateFiles(folder, pattern))
-                {
-                    System.IO.File.Delete(file);
-                }
+            foreach (var file in Directory.EnumerateFiles(folder, pattern))
+            {
+                string newThumbnail = Path.Combine(folder, Path.GetFileName(file).Replace(Photo.DisplayName, newPhoto.DisplayName));
+                System.IO.File.Move(file, newThumbnail);
             }
 
             return new RedirectResult($"~/photo/{albumName}/{newPhoto.DisplayName}/");
