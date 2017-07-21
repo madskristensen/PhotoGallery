@@ -5,12 +5,16 @@
     var photoName = Model.Photo.DisplayName;
 }
 
-<form method="post" if-authorized id="admin">
-    <input type="text" name="name" id="name" value="@Model.Photo.DisplayName" />
-    <input type="submit" vale="Change name" asp-page-handler="rename" value="Rename photo" />
+<div id="admin" if-authorized>
+    <form method="post">
+        <input type="text" name="name" id="name" required value="@Model.Photo.DisplayName" />
+        <input type="submit" vale="Change name" asp-page-handler="rename" data-progress="Renaming..." value="Rename photo" />
+    </form>
 
-    <input type="submit" id="deletephoto" class="delete" asp-page-handler="delete" title="Delete photo..." value="🗙" />
-</form>
+    <form method="post" class="delete">
+        <input type="submit" id="deletephoto" asp-page-handler="delete" title="Delete photo..." value="🗙" />
+    </form>
+</div>
 
 <div id="title">
     <h2>@Model.Photo.DisplayName</h2>

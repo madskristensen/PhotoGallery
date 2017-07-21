@@ -5,13 +5,17 @@
     var ost = Model.Album.Name;
 }
 
-<form if-authorized method="post" id="admin" enctype="multipart/form-data">
-    <label for="files" aria-hidden="true">Upload photos:</label>
-    <input type="file" id="files" name="files" multiple accept="image/*" />
-    <input type="submit" asp-page-handler="upload" id="btnfiles" disabled value="Upload photos" />
+<div id="admin" if-authorized>
+    <form method="post" enctype="multipart/form-data">
+        <label for="files" aria-hidden="true">Upload photos:</label>
+        <input type="file" id="files" name="files" required multiple accept="image/*" />
+        <input type="submit" asp-page-handler="upload" data-progress="Uploading..." id="btnfiles" value="Upload photos" />
+    </form>
 
-    <input type="submit" asp-page-handler="delete" id="deletealbum" title="Delete album..." class="delete" value="🗙" />
-</form>
+    <form method="post" class="delete">
+        <input type="submit" asp-page-handler="delete" id="deletealbum" title="Delete album..." value="🗙" />
+    </form>
+</div>
 
 <div id="title">
     <h2>@Model.Album.Name</h2>

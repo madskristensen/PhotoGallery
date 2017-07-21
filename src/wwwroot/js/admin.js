@@ -1,13 +1,20 @@
 ﻿(function () {
 
-    // File upload
-    var filesUpload = document.getElementById("files");
-    var btnfiles = document.getElementById("btnfiles");
+    // Button click
+    var submit = document.querySelector("input[type=submit]");
 
-    if (filesUpload && btnfiles) {
-        filesUpload.addEventListener("change", function () {
-            btnfiles.disabled = this.files.length === 0;
-        }, false);
+    if (submit) {
+        submit.addEventListener("click", function (e) {
+            var elm = e.target;
+
+            if (elm.form.checkValidity && elm.form.checkValidity()) {
+                elm.disabled = true;
+
+                if (elm.hasAttribute("data-progress")) {
+                    elm.value = elm.getAttribute("data-progress");
+                }
+            }
+        });
     }
 
     // Delete album

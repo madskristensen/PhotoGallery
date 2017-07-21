@@ -7,7 +7,7 @@
 <form id="admin" if-authorized method="post" action="~/albums/new/create/">
     <label for="name" aria-hidden="true">Name:</label>
     <input type="text" name="name" id="name" placeholder="Album name" required />
-    <input type="submit" id="newalbum" value="New album">
+    <input type="submit" id="newalbum" data-progress="Creating..." value="New album">
 </form>
 
 @if (ac.Albums.Count == 0)

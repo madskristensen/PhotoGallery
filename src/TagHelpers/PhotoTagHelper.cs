@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PhotoGallery.TagHelpers
 {
-    [HtmlTargetElement("img", TagStructure = TagStructure.WithoutEndTag)]
+    [HtmlTargetElement("img", Attributes = "photo, type", TagStructure = TagStructure.WithoutEndTag)]
     public class PhotoTagHelper : TagHelper
     {
         public Photo Photo { get; set; }
