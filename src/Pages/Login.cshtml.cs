@@ -39,7 +39,7 @@ namespace PhotoGallery.Pages
                 identity.AddClaim(new Claim(ClaimTypes.Name, _config["user:username"]));
 
                 var principle = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principle);
+                await HttpContext.SignInAsync(principle);
 
                 HttpContext.Response.Redirect("/");
             }

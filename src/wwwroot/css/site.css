@@ -11,10 +11,9 @@ body {
 }
 
 header {
-    margin: 0;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     padding: 0;
-    background: #555;
+    background-color: #555;
 }
 
     header h1 {
@@ -29,13 +28,11 @@ header {
 
 .container {
     max-width: 960px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
-
 a {
-    outline: 0;
     color: dodgerblue;
     text-decoration: none;
 }
@@ -58,41 +55,6 @@ a {
         float: right;
     }
 
-.photolist {
-    margin: 0 -2px -2px 0;
-    column-gap: 3px;
-    column-width: 190px;
-}
-
-    .photolist figure {
-        margin-bottom: 3px;
-        background: rgba(0, 0, 0, 0.02);
-        background-clip: content-box;
-        width: 100%;
-    }
-
-        .photolist figure:hover figcaption {
-            opacity: 1;
-        }
-
-.albumlist {
-    display: flex;
-    flex-flow: row wrap;
-    margin: -4px;
-}
-
-    .albumlist > a {
-        box-sizing: border-box;
-        flex-basis: 15%;
-        flex-grow: 1;
-        min-width: 160px;
-        margin: 4px;
-    }
-
-    .albumlist figure img {
-        height: 160px;
-    }
-
 figure {
     position: relative;
     margin: 0;
@@ -100,13 +62,12 @@ figure {
 }
 
     figure figcaption {
-        display: block;
         position: absolute;
         bottom: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.49);
+        background: rgba(0, 0, 0, 0.50);
         color: white;
-        font-size: 12px;
+        font-size: .8em;
         line-height: 25px;
         text-indent: 4px;
         opacity: 0;
@@ -120,31 +81,46 @@ figure {
         transition: opacity 0.3s;
     }
 
-        figure img[data-src] {
+        /*This will fade the images into view as they are lazy loaded */
+        figure img[data-srcset] {
             opacity: 0;
         }
 
-    figure[title]:after {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        margin-top: -10px;
-        background: rgba(0, 0, 0, 0.49);
-        color: white;
-        font-size: 12px;
-        line-height: 25px;
-        text-indent: 4px;
-        content: attr(title) " (" attr(data-count) ")";
-    }
-
-    figure[title]:hover:after {
-        text-decoration: underline;
-    }
-
-[aria-hidden=true] {
-    display: none;
+.albumlist {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -4px;
 }
+
+    .albumlist > a {
+        flex-basis: 15%;
+        flex-grow: 1;
+        min-width: 196px;
+        margin: 4px;
+    }
+
+    .albumlist img {
+        height: 175px;
+    }
+
+    .albumlist figcaption {
+        opacity: 1;
+    }
+
+.photolist {
+    margin: 0 -2px -2px 0;
+    column-gap: 3px;
+    column-width: 190px;
+}
+
+    .photolist figure {
+        margin-bottom: 3px;
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+        .photolist figure:hover figcaption {
+            opacity: 1;
+        }
 
 footer {
     position: absolute;
@@ -167,8 +143,18 @@ footer {
             opacity: .8;
         }
 
+@media (max-width: 960px) {
+    .photo img {
+        height: auto;
+    }
+}
+
 @media (max-width: 429px) {
     figure img {
+        height: auto;
+    }
+
+    .albumlist figure img {
         height: auto;
     }
 }

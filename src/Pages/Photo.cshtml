@@ -7,12 +7,12 @@
 
 <div id="admin" if-authorized>
     <form method="post">
-        <input type="text" name="name" id="name" required value="@Model.Photo.DisplayName" />
+        <input type="text" name="name" aria-label="Name" required value="@Model.Photo.DisplayName" />
         <input type="submit" vale="Change name" asp-page-handler="rename" data-progress="Renaming..." value="Rename photo" />
     </form>
 
     <form method="post" class="delete">
-        <input type="submit" id="deletephoto" asp-page-handler="delete" title="Delete photo..." value="🗙" />
+        <input type="submit" id="deletephoto" asp-page-handler="delete" aria-label="Delete photo..." title="Delete photo..." value="🗙" />
     </form>
 </div>
 

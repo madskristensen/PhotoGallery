@@ -7,13 +7,12 @@
 
 <div id="admin" if-authorized>
     <form method="post" enctype="multipart/form-data">
-        <label for="files" aria-hidden="true">Upload photos:</label>
-        <input type="file" id="files" name="files" required multiple accept="image/*" />
+        <input type="file" id="files" aria-label="Upload photo" name="files" required multiple accept="image/*" />
         <input type="submit" asp-page-handler="upload" data-progress="Uploading..." id="btnfiles" value="Upload photos" />
     </form>
 
     <form method="post" class="delete">
-        <input type="submit" asp-page-handler="delete" id="deletealbum" title="Delete album..." value="🗙" />
+        <input type="submit" asp-page-handler="delete" id="deletealbum" aria-label="Delete album..." title="Delete album..." value="🗙" />
     </form>
 </div>
 

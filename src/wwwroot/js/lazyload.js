@@ -153,6 +153,8 @@ var responsivelyLazy = typeof responsivelyLazy !== 'undefined' ? responsivelyLaz
                 element.setAttribute('srcset', url);
             }
         }
+
+        element.removeAttribute("data-srcset");
     };
 
     var updateWindowSize = function () {
