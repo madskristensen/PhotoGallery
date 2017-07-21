@@ -11,6 +11,7 @@ namespace PhotoGallery.TagHelpers
         [ViewContext]
         public ViewContext ViewContext { get; set; }
 
+        // This makes sure it runs before any other tag helpers
         public override int Order => int.MinValue;
 
         public override void Process(TagHelperContext context, TagHelperOutput output)

@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using PhotoGallery.Models;
-using System.Collections.Generic;
 
 namespace PhotoGallery.TagHelpers
 {
-    [HtmlTargetElement("img", Attributes = "photo, type", TagStructure = TagStructure.WithoutEndTag)]
+    [HtmlTargetElement("img", Attributes = "photo, type")]
     public class PhotoTagHelper : TagHelper
     {
         public Photo Photo { get; set; }

@@ -1,17 +1,18 @@
 ﻿(function () {
 
     // Button click
-    var submit = document.querySelector("input[type=submit]");
+    var form = document.querySelector("form");
 
-    if (submit) {
-        submit.addEventListener("click", function (e) {
+    if (form) {
+        form.addEventListener("submit", function (e) {
             var elm = e.target;
 
-            if (elm.form.checkValidity && elm.form.checkValidity()) {
-                elm.disabled = true;
+            if (elm.checkValidity && elm.checkValidity()) {
+                var input = elm.querySelector("input[data-progress]");
 
-                if (elm.hasAttribute("data-progress")) {
-                    elm.value = elm.getAttribute("data-progress");
+                if (input) {
+                    input.disabled = true;
+                    input.value = input.getAttribute("data-progress");
                 }
             }
         });
@@ -25,8 +26,8 @@
             if (!confirm("Are you sure you want to delete the album?")) {
                 e.preventDefault();
             }
-        }, false)
-    };
+        }, false);
+    }
 
     // Delete photo
     var deletephoto = document.querySelector("#deletephoto");
@@ -36,6 +37,6 @@
             if (!confirm("Are you sure you want to delete the photo?")) {
                 e.preventDefault();
             }
-        }, false)
-    };
+        }, false);
+    }
 })();
