@@ -16,11 +16,15 @@ namespace PhotoGallery.TagHelpers
             output.Attributes.Add("width", (int)Type);
             output.Attributes.Add("height", height);
             output.Attributes.Add("alt", Photo.DisplayName);
-            output.Attributes.Add("src", "/img/_.gif");
 
-            // This is for lazy loading in album view
-            if (Type != ImageType.Full)
+            if (Type == ImageType.Full)
             {
+                output.Attributes.Add("src", thumbnail);
+            }
+            else
+            {
+                // This is for lazy loading in album view
+                output.Attributes.Add("src", "/img/_.gif");
                 output.Attributes.Add("data-echo", $"{thumbnail}");
             }
         }

@@ -25,9 +25,9 @@
         foreach (Photo photo in Model.Album.Photos)
         {
             <a href="@photo.Link">
-                <figure class="album" itemscope itemtype="http://schema.org/CreativeWork">
-                    <img photo="@photo" Type="Thumbnail" itemprop="image" />
-                    <figcaption itemprop="name">@photo.DisplayName</figcaption>
+                <figure class="album">
+                    <img photo="@photo" Type="Thumbnail" />
+                    <figcaption>@photo.DisplayName</figcaption>
                 </figure>
             </a>
         }

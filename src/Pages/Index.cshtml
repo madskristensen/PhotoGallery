@@ -22,9 +22,9 @@
             if (photo != null)
             {
                 <a href="/album/@album.UrlName/">
-                    <figure itemscope itemtype="http://schema.org/CreativeWork">
-                        <img photo="@photo" type="Cover" itemprop="image" />
-                        <figcaption itemprop="name">@album.Name (@album.Photos.Count)</figcaption>
+                    <figure>
+                        <img photo="@photo" type="Cover" />
+                        <figcaption>@album.Name (@album.Photos.Count)</figcaption>
                     </figure>
                 </a>
             }
