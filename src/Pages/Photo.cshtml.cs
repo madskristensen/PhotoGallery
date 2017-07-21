@@ -75,7 +75,7 @@ namespace PhotoGallery.Pages
                 }
             }
 
-            return new RedirectResult($"~/albums/{albumName}/");
+            return new RedirectResult($"~/album/{albumName}/");
         }
     }
 }

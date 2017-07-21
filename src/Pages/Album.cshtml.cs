@@ -61,7 +61,7 @@ namespace PhotoGallery.Pages
             var album = new Album(path);
             _ac.Albums.Insert(0, album);
 
-            return new RedirectResult($"~/albums/{name}/");
+            return new RedirectResult($"~/album/{name}/");
         }
 
         [Authorize]
@@ -88,7 +88,7 @@ namespace PhotoGallery.Pages
                 album.Photos.Insert(0, photo);
             }
 
-            return new RedirectResult($"~/albums/{name}/");
+            return new RedirectResult($"~/album/{name}/");
         }
     }
 }

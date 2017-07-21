@@ -4,7 +4,7 @@
     ViewData["Title"] = "Albums";
 }
 
-<form id="admin" if-authorized method="post" action="~/albums/new/create/">
+<form id="admin" if-authorized method="post" action="~/album/new/create/">
     <input type="text" name="name" id="name" aria-label="Album name" placeholder="Album name" required />
     <input type="submit" id="newalbum" data-progress="Creating..." value="New album">
 </form>
@@ -21,7 +21,7 @@
             var photo = album.CoverPhoto;
             if (photo != null)
             {
-                <a href="/albums/@album.UrlName/">
+                <a href="/album/@album.UrlName/">
                     <figure itemscope itemtype="http://schema.org/CreativeWork">
                         <img photo="@photo" type="Cover" itemprop="image" />
                         <figcaption itemprop="name">@album.Name (@album.Photos.Count)</figcaption>
@@ -30,7 +30,7 @@
             }
             else
             {
-                <a href="/albums/@album.Name/">
+                <a href="/album/@album.Name/">
                     <figure>
                         <img src="~/img/_.gif" alt="Empty album" />
                         <figcaption itemprop="name">@album.Name (@album.Photos.Count)</figcaption>
