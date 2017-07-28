@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore;
+﻿using Bundler;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -69,9 +70,18 @@ namespace PhotoGallery
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+//app.UseResponseCaching();
+
+            app.UseWebOptimizer(env, assets => {
+
+                assets.AddFiles("text/css", "css/site.css")
+                      .MinifyCss();
+
+                assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")
+                      .MinifyJavaScript();
+            });
 
             app.UseAuthentication();
-            //app.UseResponseCaching();
 
             app.UseStaticFiles(new StaticFileOptions()
             {
