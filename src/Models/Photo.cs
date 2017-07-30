@@ -48,6 +48,36 @@ namespace PhotoGallery.Models
 
         public DateTime LastModified { get; }
 
+        public Photo Next
+        {
+            get
+            {
+                int index = Album.Photos.IndexOf(this);
+
+                if (index < Album.Photos.Count - 1)
+                {
+                    return Album.Photos[index + 1];
+                }
+
+                return null;
+            }
+        }
+
+        public Photo Previous
+        {
+            get
+            {
+                int index = Album.Photos.IndexOf(this);
+
+                if (index > 0)
+                {
+                    return Album.Photos[index - 1];
+                }
+
+                return null;
+            }
+        }
+
         public string Link
         {
             get

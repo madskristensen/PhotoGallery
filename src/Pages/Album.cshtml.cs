@@ -58,7 +58,7 @@ namespace PhotoGallery.Pages
             string path = Path.Combine(_environment.WebRootPath, "albums", name);
 
             Directory.CreateDirectory(path);
-            var album = new Album(path);
+            var album = new Album(path, _ac);
             _ac.Albums.Insert(0, album);
 
             return new RedirectResult($"~/album/{name}/");

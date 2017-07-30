@@ -6,8 +6,11 @@ namespace PhotoGallery.Models
 {
     public class Album
     {
-        public Album(string absolutePath)
+        private AlbumCollection _ac;
+
+        public Album(string absolutePath, AlbumCollection ac)
         {
+            _ac = ac;
             AbsolutePath = absolutePath;
             Name = new DirectoryInfo(AbsolutePath).Name;
             Photos = new List<Photo>();
@@ -32,6 +35,36 @@ namespace PhotoGallery.Models
             get
             {
                 return Photos?.FirstOrDefault();
+            }
+        }
+
+        public Album Next
+        {
+            get
+            {
+                int index = _ac.Albums.IndexOf(this);
+
+                if (index < _ac.Albums.Count - 1)
+                {
+                    return _ac.Albums[index + 1];
+                }
+
+                return null;
+            }
+        }
+
+        public Album Previous
+        {
+            get
+            {
+                int index = _ac.Albums.IndexOf(this);
+
+                if (index > 0)
+                {
+                    return _ac.Albums[index - 1];
+                }
+
+                return null;
             }
         }
     }

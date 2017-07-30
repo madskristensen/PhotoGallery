@@ -9,6 +9,6 @@
     <ItemGroup>
         <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
         <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview2-final" />
-        <PackageReference Include="LigerShark.WebOptimizer.Core" Version="1.0.51-alpha" />
+        <PackageReference Include="LigerShark.WebOptimizer.Core" Version="1.0.61-alpha" />
     </ItemGroup>
 </Project>

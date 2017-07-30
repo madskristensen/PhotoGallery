@@ -13,6 +13,12 @@ namespace PhotoGallery.TagHelpers
         {
             string thumbnail = Photo.GetThumbnailLink((int)Type, out int height);
 
+            if (string.IsNullOrEmpty(thumbnail))
+            {
+                output.SuppressOutput();
+                return;
+            }
+
             output.Attributes.Add("width", (int)Type);
             output.Attributes.Add("height", height);
             output.Attributes.Add("alt", Photo.DisplayName);

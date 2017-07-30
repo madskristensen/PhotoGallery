@@ -70,11 +70,12 @@ namespace PhotoGallery
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-//app.UseResponseCaching();
+
+            //app.UseResponseCaching();
 
             app.UseWebOptimizer(env, assets => {
 
-                assets.AddFiles("text/css", "css/site.css")
+                assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
                       .MinifyCss();
 
                 assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")

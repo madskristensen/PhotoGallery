@@ -46,7 +46,7 @@ namespace PhotoGallery.Models
 
         private Album GetAlbum(string albumPath)
         {
-            var album = new Album(albumPath);
+            var album = new Album(albumPath, this);
             var directory = new DirectoryInfo(albumPath);
             var photos = directory.EnumerateFiles()
                 .Where(f => IsImageFile(f.FullName))

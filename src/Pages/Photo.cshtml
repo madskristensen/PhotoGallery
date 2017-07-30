@@ -17,8 +17,18 @@
 </div>
 
 <div id="title">
+    <section role="menubar" aria-label="Pagination">
+        @if (Model.Photo.Previous != null)
+        {
+            <a href="@Model.Photo.Previous.Link" accesskey="p">&lt;Prev</a>
+        }
+
+        @if (Model.Photo.Next != null)
+        {
+            <a href="@Model.Photo.Next.Link" accesskey="n">Next &gt;</a>
+        }
+    </section>
     <h2>@Model.Photo.DisplayName</h2>
-    <span>in <a href="/album/@Model.Photo.Album.UrlName">@Model.Photo.Album.Name</a></span>
 </div>
 
 <figure class="photo" itemscope itemtype="http://schema.org/CreativeWork">
@@ -34,4 +44,14 @@
 
 @section styles {
     <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    @if (Model.Photo.Next != null)
+    {
+        <link rel="next" href="@Model.Photo.Next.Link" />
+        <link rel="prefetch" href="@Model.Photo.Next.Link" />
+    }
+
+    @if (Model.Photo.Previous != null)
+    {
+        <link rel="prev" href="@Model.Photo.Previous.Link" />
+    }
 }
