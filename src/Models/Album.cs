@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PhotoGallery.Models
 {
-    public class Album
+    public class Album : IPaginator
     {
         private AlbumCollection _ac;
 
@@ -26,6 +26,14 @@ namespace PhotoGallery.Models
             }
         }
 
+        public string Link
+        {
+            get
+            {
+                return $"/album/{UrlName}/";
+            }
+        }
+
         public string AbsolutePath { get; }
 
         public List<Photo> Photos { get; }
@@ -38,7 +46,7 @@ namespace PhotoGallery.Models
             }
         }
 
-        public Album Next
+        public IPaginator Next
         {
             get
             {
@@ -53,7 +61,7 @@ namespace PhotoGallery.Models
             }
         }
 
-        public Album Previous
+        public IPaginator Previous
         {
             get
             {

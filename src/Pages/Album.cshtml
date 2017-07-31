@@ -17,17 +17,7 @@
 </div>
 
 <div id="title">
-    <section role="menubar" aria-label="Pagination">
-        @if (Model.Album.Previous != null)
-        {
-            <a href="~/album/@Model.Album.Previous.UrlName" accesskey="p" title="@Model.Album.Previous.Name">&lt; Prev</a>
-        }
-
-        @if (Model.Album.Next != null)
-        {
-            <a href="~/album/@Model.Album.Next.UrlName" accesskey="n" title="@Model.Album.Next.Name">Next &gt;</a>
-        }
-    </section>
+    <paging model="@Model.Album" />
     <h2>@Model.Album.Name</h2>
 </div>
 
@@ -53,11 +43,12 @@
     <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
     @if (Model.Album.Next != null)
     {
-        <link rel="next" href="~/album/@Model.Album.Next.UrlName" />
+        <link rel="next" href="@Model.Album.Next.Link" />
+        <link rel="prefetch" href="@Model.Album.Next.Link" />
     }
 
     @if (Model.Album.Previous != null)
     {
-        <link rel="prev" href="~/album/@Model.Album.Previous.UrlName" />
+        <link rel="prev" href="@Model.Album.Previous.Link" />
     }
 }

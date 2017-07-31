@@ -8,8 +8,9 @@
 body {
     margin: 0 auto 70px auto;
     padding: 0;
+    color: #555;
     background-color: whitesmoke;
-    font: 16px/1.4 sans-serif;
+    font: 16px/1.4 "trebuchet ms", palatino, tahoma, sans-serif;
 }
 
 .container {
@@ -56,7 +57,7 @@ a {
         float: right;
     }
 
-        #title > section > a:nth-child(2):before {
+        #title > section > :nth-child(2):before {
             content: " |";
             color: black;
             margin-right: 5px;
@@ -78,6 +79,8 @@ figure {
         line-height: 25px;
         text-indent: 4px;
         opacity: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
         -moz-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         -webkit-transition: opacity 0.3s;
@@ -142,6 +145,10 @@ figure {
         .photolist figure:hover figcaption {
             opacity: 1;
         }
+
+.download {
+    float: right;
+}
 
 footer {
     position: absolute;

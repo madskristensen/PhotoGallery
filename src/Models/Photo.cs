@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace PhotoGallery.Models
 {
-    public class Photo
+    public class Photo : IPaginator
     {
         private Dictionary<int, int> _heights = new Dictionary<int, int>();
         private static Regex _size = new Regex(@"(?<name>.+)-(?<width>[0-9]+)x(?<height>[0-9]+).", RegexOptions.Compiled);
@@ -48,7 +48,7 @@ namespace PhotoGallery.Models
 
         public DateTime LastModified { get; }
 
-        public Photo Next
+        public IPaginator Next
         {
             get
             {
@@ -63,7 +63,7 @@ namespace PhotoGallery.Models
             }
         }
 
-        public Photo Previous
+        public IPaginator Previous
         {
             get
             {

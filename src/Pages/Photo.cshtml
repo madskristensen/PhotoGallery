@@ -17,17 +17,7 @@
 </div>
 
 <div id="title">
-    <section role="menubar" aria-label="Pagination">
-        @if (Model.Photo.Previous != null)
-        {
-            <a href="@Model.Photo.Previous.Link" accesskey="p">&lt;Prev</a>
-        }
-
-        @if (Model.Photo.Next != null)
-        {
-            <a href="@Model.Photo.Next.Link" accesskey="n">Next &gt;</a>
-        }
-    </section>
+    <paging model="@Model.Photo" />
     <h2>@Model.Photo.DisplayName</h2>
 </div>
 
@@ -36,7 +26,14 @@
     <figcaption itemprop="name">@Model.Photo.DisplayName</figcaption>
 </figure>
 
-<a href="@Model.Photo.DownloadLink">Download original</a>
+<aside>
+    <span>
+        Posted in:
+        <a href="@Model.Photo.Album.Link">@Model.Photo.Album.Name</a>
+    </span>
+    <a href="@Model.Photo.DownloadLink" class="download">Download</a>
+</aside>
+
 
 @section scripts{
     <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
