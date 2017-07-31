@@ -92,10 +92,11 @@ figure {
         width: 100%;
         opacity: 1;
         border: none; /* for IE10 */
-        -moz-transition: opacity 1s;
-        -o-transition: opacity 1s;
-        -webkit-transition: opacity 1s;
-        transition: opacity 1s;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        -webkit-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        will-change: opacity;
     }
 
         /*This will fade the images into view as they are lazy loaded */
@@ -118,6 +119,7 @@ figure {
 
     .albumlist img {
         height: 175px;
+        will-change: auto;
     }
 
     .albumlist figcaption {

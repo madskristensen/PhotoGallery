@@ -3,6 +3,6 @@
 
 echo.init({
     offset: 0,
-    throttle: 150,
+    throttle: 250,
     debounce: false,
 });

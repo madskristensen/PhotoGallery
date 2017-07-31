@@ -133,7 +133,7 @@ namespace PhotoGallery.Models
 
         private string GenerateThumbnailLink(int width, int height, string ext)
         {
-            return $"{ThumbnailDirectory}{UrlName}-{width}x{height}{ext}?v={Math.Abs(LastModified.Ticks)}";
+            return $"{ThumbnailDirectory}{UrlName}-{width}x{height}{ext}";
         }
     }
 }
