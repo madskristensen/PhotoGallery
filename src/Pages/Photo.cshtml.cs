@@ -25,7 +25,6 @@ namespace PhotoGallery.Pages
         {
             var album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(albumName, StringComparison.OrdinalIgnoreCase));
             Photo = album.Photos.FirstOrDefault(p => p.DisplayName.Equals(photoName, StringComparison.OrdinalIgnoreCase));
-            ViewData["Title"] = $"{Photo.DisplayName} - {Photo.Album.Name}";
         }
 
         public IActionResult OnPostRename(string albumName, string photoName)

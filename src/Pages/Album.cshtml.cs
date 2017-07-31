@@ -30,7 +30,6 @@ namespace PhotoGallery.Pages
         public void OnGet(string name)
         {
             Album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-            ViewData["Title"] = Album.Name;
         }
 
         [Authorize]

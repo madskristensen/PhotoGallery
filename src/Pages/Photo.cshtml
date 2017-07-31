@@ -1,8 +1,8 @@
 ﻿@page "{albumName}/{photoName}/{handler?}"
 @model PhotoModel
 @{
-    var albumName = Model.Photo.Album.Name;
-    var photoName = Model.Photo.DisplayName;
+    ViewData["Title"] = $"{Model.Photo.DisplayName} - {Model.Photo.Album.Name}";
+    ViewData["Description"] = $"{Model.Photo.DisplayName} from the album {Model.Photo.Album.Name}";
 }
 
 <div id="admin" if-authorized>

@@ -2,6 +2,7 @@
 @inject AlbumCollection ac
 @{
     ViewData["Title"] = "Albums";
+    ViewData["Description"] = $"My photo gallery with {ac.Albums.Count} albums";
 }
 
 <form id="admin" if-authorized method="post" action="~/album/new/create/">

@@ -2,7 +2,8 @@
 @model AlbumsModel
 
 @{
-    var ost = Model.Album.Name;
+    ViewData["Title"] = Model.Album.Name;
+    ViewData["Description"] = $"The photo album \"{Model.Album.Name}\" containing {Model.Album.Photos.Count} photos";
 }
 
 <div id="admin" if-authorized>

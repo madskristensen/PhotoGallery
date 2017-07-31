@@ -12,7 +12,6 @@ namespace PhotoGallery.TagHelpers
             output.TagName = "section";
             output.TagMode = TagMode.StartTagAndEndTag;
             output.Attributes.SetAttribute("aria-label", "Pagination");
-            output.Attributes.SetAttribute("role", "menubar");
 
             if (Model.Previous != null)
             {
