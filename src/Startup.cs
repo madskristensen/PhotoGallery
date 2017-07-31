@@ -74,12 +74,12 @@ namespace PhotoGallery
             //app.UseResponseCaching();
 
             app.UseWebOptimizer(env, assets => {
-
+                assets.EnableCaching = true;
                 assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
                       .MinifyCss();
 
                 assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")
-                      .MinifyJavaScript();
+                      .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
             });
 
             app.UseAuthentication();

@@ -3,7 +3,7 @@
     public enum ImageType
     {
         Thumbnail = 190,
-        Cover = 225,
+        Cover = 375,
         Full = 960
     }
 }

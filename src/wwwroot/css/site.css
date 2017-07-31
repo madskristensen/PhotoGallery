@@ -90,7 +90,6 @@ figure {
     figure img {
         display: block;
         width: 100%;
-        opacity: 1;
         border: none; /* for IE10 */
         -moz-transition: opacity 1s ease-in-out;
         -o-transition: opacity 1s ease-in-out;
@@ -99,10 +98,14 @@ figure {
         will-change: opacity;
     }
 
-        /*This will fade the images into view as they are lazy loaded */
-        figure img[data-echo] {
-            opacity: 0;
-        }
+    /*This will fade the images into view as they are lazy loaded */
+    figure .lazy {
+        opacity: 0;
+    }
+
+    figure .lazyloaded {
+        opacity: 1;
+    }
 
 .albumlist {
     display: flex;

@@ -36,11 +36,13 @@
         #admin input[type=submit] {
             background-color: dodgerblue;
             color: white;
+            cursor: pointer;
         }
 
         #admin input[disabled] {
             background-color: #999;
             color: #f1f1f1;
+            cursor: progress;
         }
 
     #admin .delete input {
@@ -53,5 +55,4 @@
         font-weight: bold;
         border: 0;
         padding: 0;
-        cursor: pointer;
     }
