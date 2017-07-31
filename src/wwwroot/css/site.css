@@ -81,20 +81,20 @@ figure {
         opacity: 0;
         overflow: hidden;
         text-overflow: ellipsis;
-        -moz-transition: opacity 0.3s;
-        -o-transition: opacity 0.3s;
-        -webkit-transition: opacity 0.3s;
-        transition: opacity 0.3s;
+        -moz-transition: opacity 300ms ease-in-out;
+        -o-transition: opacity 300ms ease-in-out;
+        -webkit-transition: opacity 300ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
     }
 
     figure img {
         display: block;
         width: 100%;
         border: none; /* for IE10 */
-        -moz-transition: opacity 1s ease-in-out;
-        -o-transition: opacity 1s ease-in-out;
-        -webkit-transition: opacity 1s ease-in-out;
-        transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 500ms ease-in-out;
+        -o-transition: opacity 500ms ease-in-out;
+        -webkit-transition: opacity 500ms ease-in-out;
+        transition: opacity 500ms ease-in-out;
         will-change: opacity;
     }
 
@@ -150,6 +150,10 @@ figure {
         .photolist figure:hover figcaption {
             opacity: 1;
         }
+
+.photo img {
+    margin-bottom: 8px;
+}
 
 .download {
     float: right;
