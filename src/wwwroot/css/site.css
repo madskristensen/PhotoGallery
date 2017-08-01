@@ -37,7 +37,7 @@ header {
         }
 
 a {
-    color: dodgerblue;
+    color: #1270c4;
     text-decoration: none;
 }
 
@@ -73,7 +73,7 @@ figure {
         position: absolute;
         bottom: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.50);
+        background: rgba(0, 0, 0, 0.60);
         color: white;
         font-size: .8em;
         line-height: 25px;
@@ -147,7 +147,8 @@ figure {
         background: rgba(0, 0, 0, 0.02);
     }
 
-        .photolist figure:hover figcaption {
+        .photolist figure:hover figcaption,
+        .photolist figure:focus figcaption {
             opacity: 1;
         }
 
@@ -165,7 +166,6 @@ footer {
     left: 0;
     width: 100%;
     height: 30px;
-    color: #777;
     text-align: center;
 }
 
