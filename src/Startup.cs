@@ -1,5 +1,4 @@
-﻿using Bundler;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using PhotoGallery.Models;
 using System;
+using WebOptimizer;
 
 namespace PhotoGallery
 {
@@ -40,7 +40,7 @@ namespace PhotoGallery
                 options.CacheProfiles.Add("default",
                     new CacheProfile
                     {
-                        Duration = (int)TimeSpan.FromDays(1).TotalMinutes, // 7 days
+                        Duration = (int)TimeSpan.FromDays(1).TotalSeconds, // 7 days
                         Location = ResponseCacheLocation.Any
                     });
             });
@@ -57,6 +57,15 @@ namespace PhotoGallery
                 o.LoginPath = "/admin/login";
                 o.LogoutPath = "/admin/logout";
             });
+            services.AddWebOptimizer(assets =>
+            {
+                assets.EnableCaching = true;
+                assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
+                      .MinifyCss();
+
+                assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")
+                      .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,16 +80,9 @@ namespace PhotoGallery
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            //app.UseResponseCaching();
+            app.UseResponseCaching();
 
-            app.UseWebOptimizer(env, assets => {
-                assets.EnableCaching = true;
-                assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
-                      .MinifyCss();
-
-                assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")
-                      .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
-            });
+            app.UseWebOptimizer();
 
             app.UseAuthentication();
 
