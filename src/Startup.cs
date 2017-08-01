@@ -54,7 +54,7 @@ namespace PhotoGallery
                 assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
                       .MinifyCss();
 
-                assets.AddFiles("application/javascript", "js/admin.js", "js/lazyload.js")
+                assets.AddJs("/all.js", "js/site.js", "js/lazyload.js")
                       .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
             });
         }

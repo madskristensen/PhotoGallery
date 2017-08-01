@@ -81,10 +81,10 @@ figure {
         opacity: 0;
         overflow: hidden;
         text-overflow: ellipsis;
-        -moz-transition: opacity 300ms ease-in-out;
-        -o-transition: opacity 300ms ease-in-out;
-        -webkit-transition: opacity 300ms ease-in-out;
-        transition: opacity 300ms ease-in-out;
+        -moz-transition: opacity 200ms ease-in-out;
+        -o-transition: opacity 200ms ease-in-out;
+        -webkit-transition: opacity 200ms ease-in-out;
+        transition: opacity 200ms ease-in-out;
     }
 
     figure img {
@@ -147,10 +147,10 @@ figure {
         background: rgba(0, 0, 0, 0.02);
     }
 
-        .photolist figure:hover figcaption,
-        .photolist figure:focus figcaption {
-            opacity: 1;
-        }
+    .photolist a:hover figure figcaption,
+    .photolist a:focus figure figcaption {
+        opacity: 1;
+    }
 
 .photo img {
     margin-bottom: 8px;
