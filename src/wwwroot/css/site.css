@@ -79,13 +79,8 @@ figure {
         font-size: .8em;
         line-height: 25px;
         text-indent: 4px;
-        opacity: 0;
         overflow: hidden;
         text-overflow: ellipsis;
-        -moz-transition: opacity 200ms ease-in-out;
-        -o-transition: opacity 200ms ease-in-out;
-        -webkit-transition: opacity 200ms ease-in-out;
-        transition: opacity 200ms ease-in-out;
     }
 
     figure img {
@@ -108,6 +103,11 @@ figure {
         opacity: 1;
     }
 
+a:hover figcaption,
+a:focus figcaption {
+    background: #1270c4;
+}
+
 .albumlist {
     display: flex;
     flex-flow: row wrap;
@@ -123,7 +123,6 @@ figure {
 
     .albumlist img {
         height: 175px;
-        will-change: auto;
     }
 
     .albumlist figcaption {
@@ -147,10 +146,9 @@ figure {
         margin-bottom: 3px;
     }
 
-    .photolist a:hover figure figcaption,
-    .photolist a:focus figure figcaption {
-        opacity: 1;
-    }
+.photo figcaption {
+    display: none;
+}
 
 .photo img {
     margin-bottom: 8px;
