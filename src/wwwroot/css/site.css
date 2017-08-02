@@ -67,6 +67,7 @@ a {
 figure {
     position: relative;
     margin: 0;
+    background: rgba(0, 0, 0, 0.02);
 }
 
     figure figcaption {
@@ -144,7 +145,6 @@ figure {
 
     .photolist figure {
         margin-bottom: 3px;
-        background: rgba(0, 0, 0, 0.02);
     }
 
     .photolist a:hover figure figcaption,
