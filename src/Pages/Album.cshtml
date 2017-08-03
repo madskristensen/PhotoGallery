@@ -37,11 +37,11 @@
 </section>
 
 @section scripts {
-    <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
+    <script if-authorized src="/js/admin.js" async></script>
 }
 
 @section styles {
-    <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link if-authorized rel="stylesheet" href="/css/admin.css" />
     @if (Model.Album.Next != null)
     {
         <link rel="next" href="@Model.Album.Next.Link" />

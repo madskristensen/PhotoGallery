@@ -50,8 +50,8 @@ namespace PhotoGallery
             });
             services.AddWebOptimizer(assets =>
             {
-                assets.EnableCaching = true;
-                assets.AddFiles("text/css", "css/site.css", "css/login.css", "css/admin.css")
+                assets.EnableTagHelperBundling = true;
+                assets.AddFiles("text/css", "/css/photos.css", "/css/site.css", "/css/login.css", "/css/admin.css")
                       .MinifyCss();
 
                 assets.AddJs("/all.js", "js/site.js", "js/lazyload.js")
@@ -72,7 +72,10 @@ namespace PhotoGallery
             }
 
             app.UseAuthentication();
-            app.UseWebOptimizer();
+            app.UseWebOptimizer(options =>
+            {
+                options.EnableCaching = true;
+            });
 
             app.UseStaticFiles(new StaticFileOptions()
             {

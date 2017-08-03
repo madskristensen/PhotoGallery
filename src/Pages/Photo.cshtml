@@ -36,11 +36,11 @@
 
 
 @section scripts{
-    <script if-authorized src="~/js/admin.js" asp-append-version="true" async></script>
+    <script if-authorized src="/js/admin.js" async></script>
 }
 
 @section styles {
-    <link if-authorized rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link if-authorized rel="stylesheet" href="/css/admin.css" />
     <link rel="index" href="@Model.Photo.Album.Link" />
     @if (Model.Photo.Next != null)
     {

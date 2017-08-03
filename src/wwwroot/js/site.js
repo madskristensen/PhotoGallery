@@ -1,5 +1,6 @@
 ﻿(function () {
 
+    // Keyboard navigation
     var keyMap = {
         "37": document.querySelector("a[rel=prev]"), // left
         "39": document.querySelector("a[rel=next]") // right

@@ -6,12 +6,13 @@
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Title"], photo, picture, gallery, images" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="~/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="preload" href="/all.js" as="script" />
+    <link rel="preload" href="/img/_.gif" as="image" />
+    <link rel="stylesheet" href="/css/site.css" />
     @RenderSection("styles", required: false)
+    <link rel="icon" href="~/img/favicon.png" type="image/png" />
 </head>
 <body>
-
     <header>
         <div class="container">
             <h1><a href="~/">Photo Gallery</a></h1>
@@ -38,7 +39,7 @@
         </p>
     </footer>
 
-    <script src="/all.js" asp-append-version="true" async></script>
+    <script src="/all.js" async></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
