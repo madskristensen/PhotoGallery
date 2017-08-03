@@ -1,0 +1,63 @@
+﻿$bgcolor: lightgray;
+$delete-color: crimson;
+
+#admin {
+    margin: 40px 0 20px 0;
+    padding: 10px;
+    background: $bgcolor;
+    border-radius: 5px;
+    position: relative;
+
+
+    &:before {
+        content: "Edit";
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: -19px;
+        background: $bgcolor;
+        padding: 0 10px;
+        border-radius: 3px;
+    }
+
+
+    input {
+        padding: 3px 7px;
+        font: inherit;
+        border: 1px solid gray;
+    }
+
+    input[type=text],
+    input[type=file] {
+        width: 220px;
+    }
+
+    input[type=file] {
+        background: $bgcolor;
+        border: none;
+    }
+
+    input[type=submit] {
+        background-color: dodgerblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    input[disabled] {
+        background-color: #999;
+        color: #f1f1f1;
+        cursor: progress;
+    }
+
+    .delete input {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: transparent;
+        color: $delete-color;
+        font-size: 1.3em;
+        font-weight: bold;
+        border: 0;
+        padding: 0;
+    }
+}

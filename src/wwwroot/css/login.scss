@@ -1,18 +1,17 @@
 ﻿#login {
     width: 300px;
     margin: 0 auto;
-}
 
-    #login fieldset {
+    fieldset {
         border: 0;
     }
 
-    #login legend {
+    legend {
         font-size: 1.2em;
         font-weight: bold;
     }
 
-    #login input:not([type=submit]) {
+    input:not([type=submit]) {
         display: block;
         width: 100%;
         margin-bottom: 10px;
@@ -21,6 +20,7 @@
         font: inherit;
     }
 
-    #login input[type=submit] {
+    input[type=submit] {
         margin-top: 10px;
     }
+}

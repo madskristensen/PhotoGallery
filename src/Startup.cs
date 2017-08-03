@@ -10,6 +10,7 @@ using Microsoft.Net.Http.Headers;
 using PhotoGallery.Models;
 using System;
 using WebOptimizer;
+using WebOptimizer.Sass;
 
 namespace PhotoGallery
 {
@@ -51,8 +52,8 @@ namespace PhotoGallery
             services.AddWebOptimizer(assets =>
             {
                 assets.EnableTagHelperBundling = true;
-                assets.AddFiles("text/css", "/css/photos.css", "/css/site.css", "/css/login.css", "/css/admin.css")
-                      .MinifyCss();
+                assets.AddCss();
+                assets.AddScss();
 
                 assets.AddJs("/all.js", "js/site.js", "js/lazyload.js")
                       .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
