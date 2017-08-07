@@ -49,13 +49,13 @@ namespace PhotoGallery
                 o.LoginPath = "/admin/login";
                 o.LogoutPath = "/admin/logout";
             });
-            services.AddWebOptimizer(assets =>
+            services.AddWebOptimizer(pipeline =>
             {
-                assets.EnableTagHelperBundling = true;
-                assets.AddCss();
-                assets.AddScss();
+                pipeline.EnableTagHelperBundling = true;
 
-                assets.AddJs("/all.js", "js/site.js", "js/lazyload.js")
+                pipeline.CompileScssFiles("css/*.scss");
+
+                pipeline.AddJavaScriptBundle("/all.js", "js/site.js", "js/lazyload.js")
                       .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
             });
         }
