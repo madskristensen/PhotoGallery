@@ -29,28 +29,32 @@ header {
     margin: 0 0 20px 0;
     padding: 0;
     background-color: $header-bgcolor;
-}
 
-    header h1 {
+    h1 {
         margin: 0;
         font-weight: normal;
         line-height: 60px;
     }
 
-        header h1 a {
-            color: $header-color;
-        }
+    h1 a {
+        color: $header-color;
+    }
+}
 
 a {
     color: $link-color;
     text-decoration: none;
+
+    &:hover figcaption,
+    &:focus figcaption {
+        background: $link-color;
+    }
 }
 
 #title {
     line-height: 2em;
-}
 
-    #title h2 {
+    h2 {
         margin: 0;
         max-width: 70%;
         white-space: nowrap;
@@ -58,24 +62,25 @@ a {
         text-overflow: ellipsis;
     }
 
-    #title > section {
+    > section {
         float: right;
     }
 
-        #title > section > :nth-child(2):before {
-            content: " |";
-            color: black;
-            margin-right: 5px;
-            text-decoration: none;
-        }
+
+    > section > :nth-child(2):before {
+        content: " |";
+        color: black;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+}
 
 figure {
     position: relative;
     margin: 0;
     background: rgba(0, 0, 0, 0.02);
-}
 
-    figure figcaption {
+    figcaption {
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -84,11 +89,12 @@ figure {
         font-size: .8em;
         line-height: 25px;
         text-indent: 4px;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    figure img {
+    img {
         display: block;
         width: 100%;
         border: none; /* for IE10 */
@@ -98,41 +104,36 @@ figure {
         transition: opacity 500ms ease-in-out;
         will-change: opacity;
     }
-
     /*This will fade the images into view as they are lazy loaded */
-    figure .lazy {
+    .lazy {
         opacity: 0;
     }
 
-    figure .lazyloaded {
+    .lazyloaded {
         opacity: 1;
     }
-
-a:hover figcaption,
-a:focus figcaption {
-    background: $link-color;
 }
 
 .albumlist {
     display: flex;
     flex-flow: row wrap;
     margin: -4px;
-}
 
-    .albumlist > a {
+    > a {
         flex-basis: 15%;
         flex-grow: 1;
         min-width: 196px;
         margin: 4px;
     }
 
-    .albumlist img {
+    img {
         height: 175px;
     }
 
-    .albumlist figcaption {
+    figcaption {
         opacity: 1;
     }
+}
 
 .photolist {
     margin-right: -2px;
@@ -145,18 +146,20 @@ a:focus figcaption {
     -moz-column-width: 190px;
     -webkit-column-width: 190px;
     column-width: 190px;
-}
 
-    .photolist figure {
+    figure {
         margin-bottom: 3px;
     }
-
-.photo figcaption {
-    display: none;
 }
 
-.photo img {
-    margin-bottom: 8px;
+.photo {
+    figcaption {
+        display: none;
+    }
+
+    img {
+        margin-bottom: 8px;
+    }
 }
 
 .download {
@@ -170,18 +173,18 @@ footer {
     width: 100%;
     height: $footer-height;
     text-align: center;
-}
 
-    footer a {
+    a {
         float: right;
         font-size: .9em;
-    }
 
-        footer a:before {
+        &:before {
             content: "🔒 ";
             filter: grayscale(100%);
             opacity: .8;
         }
+    }
+}
 
 @media (max-width: 960px) {
     .photo img {

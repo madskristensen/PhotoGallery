@@ -43,16 +43,10 @@ namespace PhotoGallery
             {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            });
-            services.AddCookieAuthentication(o =>
-            {
-                o.LoginPath = "/admin/login";
-                o.LogoutPath = "/admin/logout";
-            });
+            }).AddCookie();
+
             services.AddWebOptimizer(pipeline =>
             {
-                pipeline.EnableTagHelperBundling = true;
-
                 pipeline.CompileScssFiles("css/*.scss");
 
                 pipeline.AddJavaScriptBundle("/all.js", "js/site.js", "js/lazyload.js")
@@ -73,10 +67,7 @@ namespace PhotoGallery
             }
 
             app.UseAuthentication();
-            app.UseWebOptimizer(options =>
-            {
-                options.EnableCaching = true;
-            });
+            app.UseWebOptimizer();
 
             app.UseStaticFiles(new StaticFileOptions()
             {
