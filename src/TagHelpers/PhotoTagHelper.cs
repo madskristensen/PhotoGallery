@@ -25,6 +25,7 @@ namespace PhotoGallery.TagHelpers
             output.Attributes.Add("src", thumbnail);
             output.Attributes.Add("class", "lazy");
             output.Attributes.Add("srcset", "/img/_.gif");
+            output.Attributes.SetAttribute("cdn-prop", "data-srcset");
 
             if (Type != ImageType.Full)
             {

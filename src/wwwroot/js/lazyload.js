@@ -1,4 +1,4 @@
-﻿/*! lazysizes - v4.0.0-rc2 - https://github.com/aFarkas/lazysizes*/
+﻿/*! lazysizes - v4.0.0-rc2 - https://github.com/aFarkas/lazysizes */
 
 window.lazySizesConfig = window.lazySizesConfig || {};
 
