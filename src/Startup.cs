@@ -48,9 +48,7 @@ namespace PhotoGallery
             services.AddWebOptimizer(pipeline =>
             {
                 pipeline.CompileScssFiles("css/*.scss");
-
-                pipeline.AddJavaScriptBundle("/all.js", "js/site.js", "js/lazyload.js")
-                      .MinifyJavaScript(new NUglify.JavaScript.CodeSettings { PreserveImportantComments = false });
+                pipeline.MinifyJsFiles();
             });
         }
 
@@ -80,6 +78,8 @@ namespace PhotoGallery
                     };
                 }
             });
+
+            app.UseETagger();
 
             app.UseMvc(routes =>
             {

@@ -98,19 +98,6 @@ figure {
         display: block;
         width: 100%;
         border: none; /* for IE10 */
-        -moz-transition: opacity 500ms ease-in-out;
-        -o-transition: opacity 500ms ease-in-out;
-        -webkit-transition: opacity 500ms ease-in-out;
-        transition: opacity 500ms ease-in-out;
-        will-change: opacity;
-    }
-    /*This will fade the images into view as they are lazy loaded */
-    .lazy {
-        opacity: 0;
-    }
-
-    .lazyloaded {
-        opacity: 1;
     }
 }
 
