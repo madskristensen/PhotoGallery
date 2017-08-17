@@ -161,11 +161,11 @@ footer {
     height: $footer-height;
     text-align: center;
 
-    a {
+    a:last-child {
         float: right;
         font-size: .9em;
 
-        &:before {
+        &:last-child:before {
             content: "🔒 ";
             filter: grayscale(100%);
             opacity: .8;
