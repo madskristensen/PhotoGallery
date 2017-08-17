@@ -45,11 +45,8 @@ namespace PhotoGallery
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             }).AddCookie();
 
-            services.AddWebOptimizer(pipeline =>
-            {
-                pipeline.CompileScssFiles("css/*.scss");
-                pipeline.MinifyJsFiles();
-            });
+            services.AddWebOptimizer()
+                    .CompileScssFiles();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
