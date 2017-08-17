@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Albums";
     ViewData["Description"] = $"My photo gallery with {ac.Albums.Count} albums";
+    ViewData["Image"] = Request.Scheme + "://" + Request.Host + ac.Albums.FirstOrDefault()?.CoverPhoto?.GetThumbnailLink((int)ImageType.Full, out int h);
 }
 
 <form id="admin" if-authorized method="post" action="~/album/new/create/">
@@ -42,7 +43,7 @@
     }
 </section>
 
-@section styles {
+@section head {
     <link if-authorized rel="stylesheet" href="/css/admin.scss" />
 }
 

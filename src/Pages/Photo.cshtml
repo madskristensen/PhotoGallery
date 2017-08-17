@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = $"{Model.Photo.DisplayName} - {Model.Photo.Album.Name}";
     ViewData["Description"] = $"{Model.Photo.DisplayName} from the album {Model.Photo.Album.Name}";
+    ViewData["Image"] = Request.Scheme + "://" + Request.Host + Model.Photo.GetThumbnailLink((int)ImageType.Full, out int h);
 }
 
 <div id="admin" if-authorized>
@@ -39,7 +40,7 @@
     <script if-authorized src="/js/admin.js" async></script>
 }
 
-@section styles {
+@section head {
     <link if-authorized rel="stylesheet" href="/css/admin.scss" />
     <link rel="index" href="@Model.Photo.Album.Link" />
     @if (Model.Photo.Next != null)

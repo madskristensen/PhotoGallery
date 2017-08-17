@@ -90,7 +90,7 @@ namespace PhotoGallery.Models
         {
             get
             {
-                return $"/albums/{Album.UrlName}/{Name}";
+                return $"/albums/{Album.UrlName}/{Name.Replace(" ", "%20").ToLowerInvariant()}";
             }
         }
 

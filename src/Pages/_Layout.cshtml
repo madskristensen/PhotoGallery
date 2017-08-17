@@ -1,19 +1,24 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
     <title>@ViewData["Title"] - PhotoGallery</title>
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Title"], photo, picture, gallery, images" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/site.scss" inline />
-    @RenderSection("styles", required: false)
+    @RenderSection("head", required: false)
+    <meta name="application-name" content="@ViewData["Title"]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:url" content="@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)" />
+    <meta property="og:image" content="@ViewData["Image"]" />
     <link rel="icon" href="~/img/favicon.png" type="image/png" />
 </head>
 <body>
     <header>
         <div class="container">
-            <h1><a href="~/">Photo Gallery</a></h1>
+            <h1><a href="~/">PhotoGallery</a></h1>
         </div>
     </header>
 

@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = Model.Album.Name;
     ViewData["Description"] = $"The photo album \"{Model.Album.Name}\" containing {Model.Album.Photos.Count} photos";
+    ViewData["Image"] = Request.Scheme + "://" + Request.Host + Model.Album.CoverPhoto.GetThumbnailLink((int)ImageType.Full, out int h);
 }
 
 <div id="admin" if-authorized>
@@ -40,7 +41,7 @@
     <script if-authorized src="/js/admin.js" async></script>
 }
 
-@section styles {
+@section head {
     <link if-authorized rel="stylesheet" href="/css/admin.scss" />
     @if (Model.Album.Next != null)
     {

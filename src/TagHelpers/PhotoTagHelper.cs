@@ -28,12 +28,7 @@ namespace PhotoGallery.TagHelpers
             {
                 string thumb = Photo.GetThumbnailLink((int)ImageType.Thumbnail, out int thumbHeight);
                 string cover = Photo.GetThumbnailLink((int)ImageType.Cover, out int coverHeight);
-                output.Attributes.SetAttribute("srcset", $"{cover} {(int)ImageType.Cover}w, {thumb} {(int)ImageType.Thumbnail}w");
-            }
-            else
-            {
-                string cover = Photo.GetThumbnailLink((int)ImageType.Cover, out int coverHeight);
-                output.Attributes.SetAttribute("srcset", $"{thumbnail} {(int)Type}w, {cover} {(int)ImageType.Cover}w");
+                output.Attributes.SetAttribute("srcset", $"{thumb} 1x, {cover} 2x");
             }
         }
     }
