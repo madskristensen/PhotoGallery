@@ -15,7 +15,6 @@ namespace PhotoGallery.Models
         {
             Album = album;
             AbsolutePath = file.FullName;
-            LastModified = file.LastWriteTimeUtc;
         }
 
         public string Name
@@ -45,8 +44,6 @@ namespace PhotoGallery.Models
         public Album Album { get; }
 
         public string AbsolutePath { get; set; }
-
-        public DateTime LastModified { get; }
 
         public IPaginator Next
         {

@@ -16,7 +16,7 @@
     <p>There are no albums yet. <a asp-page="Login">Sign in</a> to create new albums and upload photos.</p>
 }
 
-<section class="albumlist pic">
+<div class="albumlist pic">
     @{
         foreach (Album album in ac.Albums)
         {
@@ -35,7 +35,7 @@
             }
         }
     }
-</section>
+</div>
 
 @section head {
     <link if-authorized rel="stylesheet" href="/css/admin.scss" />

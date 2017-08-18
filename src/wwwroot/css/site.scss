@@ -60,12 +60,12 @@ a {
         text-overflow: ellipsis;
     }
 
-    > section {
+    > nav {
         float: right;
     }
 
 
-    > section > :nth-child(2):before {
+    > nav > :nth-child(2):before {
         content: " |";
         margin-right: 5px;
         text-decoration: none;

@@ -9,7 +9,7 @@ namespace PhotoGallery.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "section";
+            output.TagName = "nav";
             output.TagMode = TagMode.StartTagAndEndTag;
             output.Attributes.SetAttribute("aria-label", "Pagination");
             output.Attributes.SetAttribute("class", "paging");

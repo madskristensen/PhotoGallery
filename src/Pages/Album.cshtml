@@ -23,7 +23,7 @@
     <h2>@Model.Album.Name</h2>
 </div>
 
-<section class="pic photolist">
+<div class="pic photolist">
     @{
         foreach (Photo photo in Model.Album.Photos)
         {
@@ -32,7 +32,7 @@
             </a>
         }
     }
-</section>
+</div>
 
 @section scripts {
     <script if-authorized src="/js/admin.js" async></script>

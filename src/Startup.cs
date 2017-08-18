@@ -64,7 +64,6 @@ namespace PhotoGallery
 
             app.UseAuthentication();
             app.UseWebOptimizer();
-            app.UseResponseCaching();
 
             app.UseStaticFiles(new StaticFileOptions()
             {
@@ -78,6 +77,7 @@ namespace PhotoGallery
                 }
             });
 
+            app.UseResponseCaching();
             app.UseETagger();
 
             app.UseMvc(routes =>
