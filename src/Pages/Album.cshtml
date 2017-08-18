@@ -23,15 +23,12 @@
     <h2>@Model.Album.Name</h2>
 </div>
 
-<section class="photolist">
+<section class="pic photolist">
     @{
         foreach (Photo photo in Model.Album.Photos)
         {
-            <a href="@photo.Link">
-                <figure class="album">
-                    <img photo="@photo" Type="Thumbnail" />
-                    <figcaption>@photo.DisplayName</figcaption>
-                </figure>
+            <a href="@photo.Link" data-text="@photo.DisplayName">
+                <img photo="@photo" Type="Thumbnail" />
             </a>
         }
     }

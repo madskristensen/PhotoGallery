@@ -16,27 +16,21 @@
     <p>There are no albums yet. <a asp-page="Login">Sign in</a> to create new albums and upload photos.</p>
 }
 
-<section class="albumlist">
+<section class="albumlist pic">
     @{
         foreach (Album album in ac.Albums)
         {
             var photo = album.CoverPhoto;
             if (photo != null)
             {
-                <a href="/album/@album.UrlName/">
-                    <figure>
-                        <img photo="@photo" type="Thumbnail" />
-                        <figcaption>@album.Name (@album.Photos.Count)</figcaption>
-                    </figure>
+                <a href="/album/@album.UrlName/" data-text="@album.Name (@album.Photos.Count)">
+                    <img photo="@photo" type="Thumbnail" />
                 </a>
             }
             else
             {
-                <a href="/album/@album.Name/">
-                    <figure>
-                        <img src="~/img/_.gif" alt="Empty album" />
-                        <figcaption itemprop="name">@album.Name (@album.Photos.Count)</figcaption>
-                    </figure>
+                <a href="/album/@album.Name/" data-text="Empty album">
+                    <img no src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Empty album" />
                 </a>
             }
         }

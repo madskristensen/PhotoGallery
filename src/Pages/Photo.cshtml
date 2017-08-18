@@ -22,18 +22,17 @@
     <h2>@Model.Photo.DisplayName</h2>
 </div>
 
-<figure class="photo" itemscope itemtype="http://schema.org/CreativeWork">
-    <img photo="@Model.Photo" type="Full" itemprop="image" />
-    <figcaption itemprop="name">@Model.Photo.DisplayName</figcaption>
-</figure>
+<div class="photo">
+    <img photo="@Model.Photo" type="Full" />
 
-<aside>
-    <span>
-        Posted in:
-        <a href="@Model.Photo.Album.Link">@Model.Photo.Album.Name</a>
-    </span>
-    <a href="@Model.Photo.DownloadLink" class="download">Download</a>
-</aside>
+    <aside>
+        <span>
+            Posted in:
+            <a href="@Model.Photo.Album.Link">@Model.Photo.Album.Name</a>
+        </span>
+        <a href="@Model.Photo.DownloadLink" class="download">Download</a>
+    </aside>
+</div>
 
 
 @section scripts{
