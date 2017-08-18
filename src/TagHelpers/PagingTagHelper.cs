@@ -23,6 +23,8 @@ namespace PhotoGallery.TagHelpers
                 output.Content.AppendHtml("<span>&lt; Prev</span>");
             }
 
+            output.Content.AppendHtml(" | ");
+
             if (Model.Next != null)
             {
                 output.Content.AppendHtml($"<a href=\"{Model.Next.Link}\" rel=\"next\" title=\"{Model.Next.Name}\">Next &gt;</a>");

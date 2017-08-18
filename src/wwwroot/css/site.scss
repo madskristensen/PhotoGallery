@@ -1,8 +1,8 @@
-﻿$header-bgcolor: #555;
-$header-color: #f5f5f5;
-$link-color: #1270c4;
-$body-color: #555;
-$body-bgcolor: #f5f5f5;
+﻿$header-bgcolor: #444;
+$header-color: #fff;
+$body-color: #444;
+$body-bgcolor: #fff;
+$link-color: #0e5494;
 $footer-height: 30px;
 
 html {
@@ -40,12 +40,12 @@ header {
 
     h1 a {
         color: $header-color;
+        text-decoration: none;
     }
 }
 
 a {
     color: $link-color;
-    text-decoration: none;
 }
 
 #title {
@@ -62,13 +62,6 @@ a {
 
     > nav {
         float: right;
-    }
-
-
-    > nav > :nth-child(2):before {
-        content: " |";
-        margin-right: 5px;
-        text-decoration: none;
     }
 }
 
