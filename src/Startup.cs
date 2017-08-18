@@ -35,8 +35,8 @@ namespace PhotoGallery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOptions();
             services.AddMvc();
+            services.AddResponseCaching();
             services.AddSingleton<AlbumCollection>();
             services.AddSingleton<ImageProcessor>();
             services.AddAuthentication(options =>
@@ -64,6 +64,7 @@ namespace PhotoGallery
 
             app.UseAuthentication();
             app.UseWebOptimizer();
+            app.UseResponseCaching();
 
             app.UseStaticFiles(new StaticFileOptions()
             {

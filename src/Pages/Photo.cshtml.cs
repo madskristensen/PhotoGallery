@@ -52,7 +52,7 @@ namespace PhotoGallery.Pages
                 System.IO.File.Move(file, newThumbnail);
             }
 
-            return new RedirectResult($"~/photo/{albumName}/{newPhoto.DisplayName}/");
+            return new RedirectResult($"~/photo/{albumName}/{newPhoto.DisplayName}/?cache=1");
 
         }
 
@@ -74,7 +74,7 @@ namespace PhotoGallery.Pages
                 }
             }
 
-            return new RedirectResult($"~/album/{albumName}/");
+            return new RedirectResult($"~/album/{albumName}/?cache=1");
         }
     }
 }

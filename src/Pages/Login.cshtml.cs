@@ -41,7 +41,7 @@ namespace PhotoGallery.Pages
                 var principle = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(principle);
 
-                HttpContext.Response.Redirect("/");
+                HttpContext.Response.Redirect("/?cache=1");
             }
         }
 

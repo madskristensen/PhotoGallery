@@ -1,5 +1,15 @@
 ﻿(function () {
 
+    // Add cache busting querystring to all internal links
+    var links = document.querySelectorAll("a:not([href~='//'])");
+
+    for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        var href = a.getAttribute("href");
+        var sep = href.indexOf("?") === -1 ? "?" : "&";
+        a.setAttribute("href", href + sep + "cache=1");
+    }
+
     // Button click
     var form = document.querySelector("form");
 

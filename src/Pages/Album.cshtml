@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = Model.Album.Name;
     ViewData["Description"] = $"The photo album \"{Model.Album.Name}\" containing {Model.Album.Photos.Count} photos";
-    ViewData["Image"] = Request.Scheme + "://" + Request.Host + Model.Album.CoverPhoto.GetThumbnailLink((int)ImageType.Full, out int h);
+    ViewData["Image"] = Request.Scheme + "://" + Request.Host + Model.Album.CoverPhoto?.GetThumbnailLink((int)ImageType.Full, out int h);
 }
 
 <div id="admin" if-authorized>

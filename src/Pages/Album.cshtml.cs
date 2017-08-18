@@ -48,7 +48,7 @@ namespace PhotoGallery.Pages
                 _ac.Albums.Remove(album);
             }
 
-            return new RedirectResult("~/");
+            return new RedirectResult("~/?cache=1");
         }
 
         [Authorize]
@@ -60,7 +60,7 @@ namespace PhotoGallery.Pages
             var album = new Album(path, _ac);
             _ac.Albums.Insert(0, album);
 
-            return new RedirectResult($"~/album/{name}/");
+            return new RedirectResult($"~/album/{name}/?cache=1");
         }
 
         [Authorize]
@@ -87,7 +87,7 @@ namespace PhotoGallery.Pages
                 album.Photos.Insert(0, photo);
             }
 
-            return new RedirectResult($"~/album/{name}/");
+            return new RedirectResult($"~/album/{name}/?cache=1");
         }
     }
 }

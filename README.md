@@ -15,3 +15,5 @@ Username and password: `demo`
 - Automatic thumbnail generation
 - Responsive web design
 - Responsive image sizes using the `srcset` attribute
+- Tagged up using HTML 5 microdata
+- OpenGraph support for Facebook, Twitter, Pinterest and more

@@ -1,6 +1,17 @@
 ﻿@{
     Layout = "_Layout.cshtml";
 
+    if (!User.Identity.IsAuthenticated)
+    {
+        Context.Response.Headers["Cache-Control"] = "public, max-age=3600";
+
+        var responseCachingFeature = Context.Features.Get<Microsoft.AspNetCore.ResponseCaching.IResponseCachingFeature>();
+        if (responseCachingFeature != null)
+        {
+            responseCachingFeature.VaryByQueryKeys = new[] { "cache" };
+        }
+    }
+
     // Setting security HTTP headers
     Context.Response.Headers["Content-Security-Policy"] = "object-src 'none'; form-action 'self'";
     Context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
