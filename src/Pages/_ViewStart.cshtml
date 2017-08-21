@@ -3,7 +3,7 @@
 
     if (!User.Identity.IsAuthenticated)
     {
-        Context.Response.Headers.Add("Cache-Control", "public,max-age=3600");
+        Context.Response.Headers.TryAdd("Cache-Control", "public,max-age=3600");
 
         var responseCachingFeature = Context.Features.Get<Microsoft.AspNetCore.ResponseCaching.IResponseCachingFeature>();
         if (responseCachingFeature != null)
