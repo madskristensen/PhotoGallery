@@ -1,0 +1,12 @@
+﻿@{
+    string path = Context.Request.Path;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        <a href="~/login/?returnUrl=@path&logout=1">Sign out</a>
+    }
+    else
+    {
+        <a href="~/login/?returnUrl=@path">Sign in</a>
+    }
+}

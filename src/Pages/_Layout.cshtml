@@ -29,16 +29,7 @@
     <footer>
         <p class="container">
             Fork me on <a href="https://github.com/madskristensen/PhotoGallery">GitHub</a>
-            @{
-                if (User.Identity.IsAuthenticated)
-                {
-                    <a href="~/login?logout=1">Sign out</a>
-                }
-                else
-                {
-                    <a asp-page="Login">Sign in</a>
-                }
-            }
+            @{await Html.RenderPartialAsync("_LoginButton.cshtml");}
         </p>
     </footer>
 

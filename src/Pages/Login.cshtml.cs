@@ -25,7 +25,8 @@ namespace PhotoGallery.Pages
             if (HttpContext.Request.Query.Any(q => q.Key == "logout") && User.Identity.IsAuthenticated)
             {
                 await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-                HttpContext.Response.Redirect("/");
+
+                RedirectFromLogin();
             }
         }
 
@@ -39,7 +40,19 @@ namespace PhotoGallery.Pages
                 var principle = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(principle);
 
-                HttpContext.Response.Redirect("/?cache=1");
+                RedirectFromLogin("?cache=1");
+            }
+        }
+
+        private void RedirectFromLogin(string query = "")
+        {
+            if (HttpContext.Request.Query.TryGetValue("returnUrl", out var returnUrl))
+            {
+                HttpContext.Response.Redirect(returnUrl.ToString() + query);
+            }
+            else
+            {
+                HttpContext.Response.Redirect("/?" + query);
             }
         }
 
