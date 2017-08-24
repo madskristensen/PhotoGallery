@@ -20,10 +20,4 @@
     Context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
     Context.Response.Headers["X-Frame-Options"] = "SAMEORIGIN";
     Context.Response.Headers["Referrer-Policy"] = "origin-when-cross-origin";
-
-    // Don't add this in development due to Browser Link
-    if (!env.IsDevelopment())
-    {
-        Context.Response.Headers["Content-Security-Policy"] += $"; script-src 'unsafe-inline' 'nonce-{Context.GetOrCreateNonce()}' 'strict-dynamic'";
-    }
 }
