@@ -8,8 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using PhotoGallery.Models;
 using System;
-using WebOptimizer;
-using WebOptimizer.Sass;
 
 namespace PhotoGallery
 {
@@ -81,7 +79,7 @@ namespace PhotoGallery
             });
 
             app.UseResponseCaching();
-            //app.UseETagger();
+            app.UseETagger();
 
             app.UseMvc(routes =>
             {
