@@ -45,7 +45,8 @@ namespace PhotoGallery
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             }).AddCookie();
 
-            services.AddWebOptimizer(pipeline => {
+            services.AddWebOptimizer(pipeline =>
+            {
                 pipeline.MinifyJsFiles();
                 pipeline.CompileScssFiles();
             });
@@ -80,7 +81,7 @@ namespace PhotoGallery
             });
 
             app.UseResponseCaching();
-            app.UseETagger();
+            //app.UseETagger();
 
             app.UseMvc(routes =>
             {
