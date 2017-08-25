@@ -76,12 +76,12 @@ namespace PhotoGallery.Pages
                     path = Path.ChangeExtension(path, file.GetHashCode() + Path.GetExtension(path));
                 }
 
-                using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                using (var imageStream = file.OpenReadStream())
+                using (var fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                 {
-                    await file.CopyToAsync(stream);
+                    _processor.CreateThumbnails(imageStream, path);
+                    await file.CopyToAsync(fileStream);
                 }
-
-                _processor.CreateThumbnails(name, path);
 
                 var photo = new Photo(album, new FileInfo(path));
                 album.Photos.Insert(0, photo);

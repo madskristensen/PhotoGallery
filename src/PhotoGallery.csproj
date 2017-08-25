@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
         <PackageReference Include="LigerShark.WebOptimizer.Core" Version="1.0.158-beta" />
         <PackageReference Include="LigerShark.WebOptimizer.Sass" Version="1.0.32-beta" />
         <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+        <PackageReference Include="SkiaSharp" Version="1.59.1" />
     </ItemGroup>
 </Project>
