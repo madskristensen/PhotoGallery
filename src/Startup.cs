@@ -34,7 +34,6 @@ namespace PhotoGallery
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddResponseCaching();
             services.AddSingleton<AlbumCollection>();
             services.AddSingleton<ImageProcessor>();
             services.AddAuthentication(options =>
@@ -55,14 +54,14 @@ namespace PhotoGallery
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
             app.UseAuthentication();
             app.UseWebOptimizer();
 
@@ -77,9 +76,6 @@ namespace PhotoGallery
                     };
                 }
             });
-
-            app.UseResponseCaching();
-            app.UseETagger();
 
             app.UseMvc(routes =>
             {

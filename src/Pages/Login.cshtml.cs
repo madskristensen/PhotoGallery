@@ -40,7 +40,7 @@ namespace PhotoGallery.Pages
                 var principle = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(principle);
 
-                RedirectFromLogin("?cache=1");
+                RedirectFromLogin();
             }
         }
 
@@ -52,7 +52,7 @@ namespace PhotoGallery.Pages
             }
             else
             {
-                HttpContext.Response.Redirect("/?" + query);
+                HttpContext.Response.Redirect("/");
             }
         }
 

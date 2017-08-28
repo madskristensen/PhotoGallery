@@ -27,9 +27,16 @@ namespace PhotoGallery.Pages
 
         public Album Album { get; private set; }
 
-        public void OnGet(string name)
+        public IActionResult OnGet(string name)
         {
             Album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if (Album == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
         }
 
         [Authorize]
@@ -48,7 +55,7 @@ namespace PhotoGallery.Pages
                 _ac.Albums.Remove(album);
             }
 
-            return new RedirectResult("~/?cache=1");
+            return new RedirectResult("~/");
         }
 
         [Authorize]
@@ -60,7 +67,7 @@ namespace PhotoGallery.Pages
             var album = new Album(path, _ac);
             _ac.Albums.Insert(0, album);
 
-            return new RedirectResult($"~/album/{name}/?cache=1");
+            return new RedirectResult($"~/album/{name}/");
         }
 
         [Authorize]
@@ -87,7 +94,7 @@ namespace PhotoGallery.Pages
                 album.Photos.Insert(0, photo);
             }
 
-            return new RedirectResult($"~/album/{name}/?cache=1");
+            return new RedirectResult($"~/album/{name}/");
         }
     }
 }

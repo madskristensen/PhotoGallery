@@ -7,12 +7,6 @@
     if (!User.Identity.IsAuthenticated)
     {
         Context.Response.Headers.TryAdd("Cache-Control", "public,max-age=3600");
-
-        var responseCachingFeature = Context.Features.Get<Microsoft.AspNetCore.ResponseCaching.IResponseCachingFeature>();
-        if (responseCachingFeature != null)
-        {
-            responseCachingFeature.VaryByQueryKeys = new[] { "cache" };
-        }
     }
 
     // Setting security HTTP headers

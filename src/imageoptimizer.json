@@ -1,0 +1,14 @@
+{
+  "optimizations": [
+    {
+      "includes": [ "wwwroot/albums/*/thumbnail/*.*" ],
+      "lossy": true
+    },
+    {
+      "includes": [ "wwwroot/albums/*/*.*" ],
+      "lossy": false
+    }
+  ],
+
+  "warmupTime": 0
+}
