@@ -8,7 +8,5 @@
       "includes": [ "wwwroot/albums/*/*.*" ],
       "lossy": false
     }
-  ],
-
-  "warmupTime": 0
+  ]
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -58,16 +59,18 @@ namespace PhotoGallery.Pages
 
         private bool VerifyHashedPassword(string password)
         {
-            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
             byte[] saltBytes = Encoding.UTF8.GetBytes(_config["user:salt"]);
-            byte[] saltedValue = passwordBytes.Concat(saltBytes).ToArray();
 
-            using (var sha = new SHA256Managed())
-            {
-                byte[] hash = sha.ComputeHash(saltedValue);
-                var hashText = BitConverter.ToString(hash).Replace("-", string.Empty);
-                return hashText == _config["user:password"];
-            }
+            byte[] hashBytes = KeyDerivation.Pbkdf2(
+                password: password,
+                salt: saltBytes,
+                prf: KeyDerivationPrf.HMACSHA1,
+                iterationCount: 1000,
+                numBytesRequested: 256 / 8
+            );
+
+            string hashText = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+            return hashText == _config["user:password"];
         }
     }
 }
