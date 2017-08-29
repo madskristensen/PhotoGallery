@@ -6,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,7 +30,7 @@ namespace PhotoGallery.Pages
             }
         }
 
-        public async Task OnPost(string username, string password)
+        public async Task OnPost(string username, string password, string remember)
         {
             if (username == _config["user:username"] && VerifyHashedPassword(password))
             {
@@ -39,7 +38,8 @@ namespace PhotoGallery.Pages
                 identity.AddClaim(new Claim(ClaimTypes.Name, _config["user:username"]));
 
                 var principle = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(principle);
+                var properties = new AuthenticationProperties { IsPersistent = remember == "on" };
+                await HttpContext.SignInAsync(principle, properties);
 
                 RedirectFromLogin();
             }

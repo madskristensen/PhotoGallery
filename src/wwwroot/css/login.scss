@@ -11,7 +11,8 @@
         font-weight: bold;
     }
 
-    input:not([type=submit]) {
+    input[type=text],
+    input[type=password] {
         display: block;
         width: 100%;
         margin-bottom: 10px;
@@ -22,5 +23,6 @@
 
     input[type=submit] {
         margin-top: 10px;
+        display: block;
     }
 }
