@@ -14,6 +14,8 @@ Username and password: `demo`
 - Elegant masonry layout of images
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
   - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F)
+- Speed Index < 1000
+  - [See WebPageTest](http://www.webpagetest.org/result/170830_XB_c81df8181632a2db8433862f8584ccd8/) 
 - Meets highest accessibility standards 
   - [Run accessibility validator](http://wave.webaim.org/report#/https://gallerytemplate.azurewebsites.net)
 - W3C standards compliant HTML and CSS 
