@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace PhotoGallery.Pages
@@ -67,7 +68,7 @@ namespace PhotoGallery.Pages
             var album = new Album(path, _ac);
             _ac.Albums.Insert(0, album);
 
-            return new RedirectResult($"~/album/{name}/");
+            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
         }
 
         [Authorize]
@@ -75,7 +76,7 @@ namespace PhotoGallery.Pages
         {
             foreach (var file in files.Where(f => _ac.IsImageFile(f.FileName)))
             {
-                var album = _ac.Albums.FirstOrDefault(a => a.UrlName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                var album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
                 string path = Path.Combine(_environment.WebRootPath, "albums", album.Name, Path.GetFileName(file.FileName));
 
                 if (System.IO.File.Exists(path))
@@ -94,7 +95,7 @@ namespace PhotoGallery.Pages
                 album.Photos.Insert(0, photo);
             }
 
-            return new RedirectResult($"~/album/{name}/");
+            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
         }
     }
 }

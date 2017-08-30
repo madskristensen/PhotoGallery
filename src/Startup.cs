@@ -54,11 +54,8 @@ namespace PhotoGallery
         {
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
-            }
-            else
-            {
             }
 
             app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
