@@ -1,13 +1,7 @@
-﻿@using WebOptimizer;
-@using Microsoft.AspNetCore.Hosting;
+﻿@using Microsoft.AspNetCore.Hosting;
 @inject IHostingEnvironment env
 @{
     Layout = "_Layout.cshtml";
-
-    if (!User.Identity.IsAuthenticated)
-    {
-        Context.Response.Headers.TryAdd("Cache-Control", "public,max-age=3600");
-    }
 
     // Setting security HTTP headers
     Context.Response.Headers["Content-Security-Policy"] = $"object-src 'none'; form-action 'self'";
