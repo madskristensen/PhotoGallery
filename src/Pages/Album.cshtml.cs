@@ -69,7 +69,7 @@ namespace PhotoGallery.Pages
             _ac.Albums.Insert(0, album);
             _ac.Sort();
 
-            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
+            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name).Replace('+', ' ')}/");
         }
 
         [Authorize]
@@ -99,7 +99,7 @@ namespace PhotoGallery.Pages
 
             album.Sort();
 
-            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
+            return new RedirectResult($"~/album/{WebUtility.UrlEncode(name).Replace('+', ' ')}/");
         }
     }
 }
