@@ -28,6 +28,21 @@ Username and password: `demo`
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
 
+## Admin interface
+When logged in, you can manage the albums and photos easily through a simple-to-use admin bar located under the header on the website.
+
+This is how to create new albums directly from the home page:
+
+![Admin Album View](art/admin-album-view.png)
+
+Uploading photos to an album or deleting the entire album:
+
+![Admin Album Upload](art/admin-album-upload.png)
+
+Rename or delete a photo:
+
+![Admin Photo](art/admin-photo.png)
+
 ## How to use
 
 1. Fork and/or clone this repo
