@@ -25,3 +25,10 @@ Username and password: `demo`
   - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
+
+## How to use
+
+1. Fork and/or clone this repo
+2. Change user settings in `\src\appsettings.json`
+3. Make any modifications you want
+4. Deploy
