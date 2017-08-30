@@ -36,7 +36,7 @@ namespace PhotoGallery.Models
 
         public string AbsolutePath { get; }
 
-        public List<Photo> Photos { get; }
+        public List<Photo> Photos { get; private set; }
 
         public Photo CoverPhoto
         {
@@ -75,5 +75,11 @@ namespace PhotoGallery.Models
                 return null;
             }
         }
+
+        public void Sort()
+        {
+            Photos = Photos.OrderBy(p => p.DisplayName).ToList();
+        }
+
     }
 }

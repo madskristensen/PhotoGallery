@@ -41,7 +41,12 @@ namespace PhotoGallery.Models
                 Albums.Add(album);
             }
 
-            //Albums = Albums.OrderByDescending(a => File.GetLastWriteTime(a.AbsolutePath)).ToList();
+            Sort();
+        }
+
+        public void Sort()
+        {
+            Albums = Albums.OrderBy(a => a.Name).ToList();
         }
 
         private Album GetAlbum(string albumPath)
@@ -54,6 +59,7 @@ namespace PhotoGallery.Models
                 .Select(a => new Photo(album, a));
 
             album.Photos.AddRange(photos);
+            album.Sort();
 
             return album;
         }

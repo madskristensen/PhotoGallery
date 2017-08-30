@@ -67,6 +67,7 @@ namespace PhotoGallery.Pages
             Directory.CreateDirectory(path);
             var album = new Album(path, _ac);
             _ac.Albums.Insert(0, album);
+            _ac.Sort();
 
             return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
         }
@@ -74,9 +75,10 @@ namespace PhotoGallery.Pages
         [Authorize]
         public async Task<IActionResult> OnPostUpload(string name, ICollection<IFormFile> files)
         {
+            var album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
             foreach (var file in files.Where(f => _ac.IsImageFile(f.FileName)))
             {
-                var album = _ac.Albums.FirstOrDefault(a => a.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
                 string path = Path.Combine(_environment.WebRootPath, "albums", album.Name, Path.GetFileName(file.FileName));
 
                 if (System.IO.File.Exists(path))
@@ -94,6 +96,8 @@ namespace PhotoGallery.Pages
                 var photo = new Photo(album, new FileInfo(path));
                 album.Photos.Insert(0, photo);
             }
+
+            album.Sort();
 
             return new RedirectResult($"~/album/{WebUtility.UrlEncode(name)}/");
         }
