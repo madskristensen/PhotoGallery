@@ -76,6 +76,9 @@ a {
         width: 100%;
         border: none; /* for IE10 */
         opacity: 0;
+        -moz-transition: opacity 500ms ease-in-out;
+        -o-transition: opacity 500ms ease-in-out;
+        -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
         will-change: auto;
 
@@ -98,6 +101,9 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
         opacity: 0;
+        -moz-transition: opacity 300ms ease-in-out;
+        -o-transition: opacity 300ms ease-in-out;
+        -webkit-transition: opacity 300ms ease-in-out;
         transition: opacity 300ms ease-in-out;
     }
 

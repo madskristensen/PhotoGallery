@@ -26,6 +26,7 @@ namespace PhotoGallery
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseKestrel(a => a.AddServerHeader = false)
                 .Build();
 
         public IConfiguration Configuration { get; }
@@ -66,11 +67,9 @@ namespace PhotoGallery
             {
                 OnPrepareResponse = (context) =>
                 {
-                    var headers = context.Context.Response.GetTypedHeaders();
-                    headers.CacheControl = new CacheControlHeaderValue()
-                    {
-                        MaxAge = TimeSpan.FromDays(365)
-                    };
+                    var time = TimeSpan.FromDays(365);
+                    context.Context.Response.Headers[HeaderNames.CacheControl] = $"max-age={time.TotalSeconds.ToString()}";
+                    context.Context.Response.Headers[HeaderNames.Expires] = DateTime.UtcNow.Add(time).ToString("R");
                 }
             });
 

@@ -22,6 +22,8 @@ Username and password: `demo`
   - [Run HTML validator](https://html5.validator.nu/?doc=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
 - Automatic thumbnail generation
 - Responsive web design
+- Mobile friendly
+  - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=a6_0iisWRO_k_8DN6LMlSw)
 - Responsive image sizes using the `srcset` attribute
 - [Schema.org](http://schema.org/docs/about.html) support with HTML 5 Microdata 
   - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
