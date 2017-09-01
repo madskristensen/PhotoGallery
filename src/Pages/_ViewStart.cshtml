@@ -5,7 +5,7 @@
     Context.Response.Headers["Content-Security-Policy"] = $"object-src 'none'; form-action 'self'";
     Context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
     Context.Response.Headers["Referrer-Policy"] = "no-referrer-when-downgrade";
-    //Context.Response.Headers["X-Frame-Options"] = "DENY"; // Uncomment this line
+    Context.Response.Headers["X-Frame-Options"] = "ALLOW-FROM https://www.responsinator.com/"; // Should be set to "DENY"
 
     if (Context.Request.IsHttps)
     {
