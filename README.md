@@ -1,11 +1,10 @@
 # ASP.NET Core Photo Gallery 
 
-A photo gallery site implemented in ASP.NET Core 2.0
+A photo gallery site implemented in ASP.NET Core 2.0.
+
+**Demo website**: <https://gallerytemplate.azurewebsites.net/>
 
 ![Masonry](art/masonry.png)
-
-## Try it out
-Demo website: <https://gallerytemplate.azurewebsites.net/>
 
 ## Features
 
