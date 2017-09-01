@@ -5,9 +5,7 @@ A photo gallery site implemented in ASP.NET Core 2.0
 ![Masonry](art/masonry.png)
 
 ## Try it out
-Website: <https://gallerytemplate.azurewebsites.net/>
-
-Username and password: `demo`
+Demo website: <https://gallerytemplate.azurewebsites.net/>
 
 ## Features
 
