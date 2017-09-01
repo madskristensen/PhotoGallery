@@ -4,7 +4,7 @@ A photo gallery site implemented in ASP.NET Core 2.0.
 
 **Demo website**: <https://gallerytemplate.azurewebsites.net/>
 
-![Masonry](art/masonry.png)
+![Masonry](art/masonry.jpg "Masonry layout of images")
 
 ## Features
 
