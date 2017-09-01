@@ -45,11 +45,18 @@ namespace PhotoGallery.Pages
             }
         }
 
-        private void RedirectFromLogin(string query = "")
+        private void RedirectFromLogin()
         {
-            if (HttpContext.Request.Query.TryGetValue("returnUrl", out var returnUrl))
+            if (Request.HasFormContentType &&
+                Request.Form.TryGetValue("referrer", out var referrer) &&
+                Uri.TryCreate(referrer.ToString(), UriKind.Absolute, out Uri url) &&
+                url.Authority == Request.Host.Value)
             {
-                HttpContext.Response.Redirect(returnUrl.ToString() + query);
+                HttpContext.Response.Redirect(url.ToString());
+            }
+            else if (HttpContext.Request.Query.TryGetValue("returnUrl", out var returnUrl))
+            {
+                HttpContext.Response.Redirect(returnUrl.ToString());
             }
             else
             {

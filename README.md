@@ -29,6 +29,8 @@ Username and password: `demo`
   - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
+- Seach engined optimized
+  - [Run SEO Site Checkup](https://seositecheckup.com/seo-audit/gallerytemplate.azurewebsites.net)
 
 ## Admin interface
 When logged in, you can manage the albums and photos easily through a simple-to-use admin bar located under the header on the website.

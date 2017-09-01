@@ -132,5 +132,10 @@ namespace PhotoGallery.Models
         {
             return $"{ThumbnailDirectory}{UrlName}-{width}x{height}{ext}";
         }
+
+        public override string ToString()
+        {
+            return DisplayName;
+        }
     }
 }

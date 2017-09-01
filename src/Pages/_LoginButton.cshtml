@@ -3,10 +3,10 @@
 
     if (User.Identity.IsAuthenticated)
     {
-        <a href="~/login/?returnUrl=@path&logout=1" title="Sign in as administrator">Sign out</a>
+        <a href="~/login/?returnUrl=@path&logout=1" title="Sign out as administrator">Sign out</a>
     }
     else
     {
-        <a href="~/login/?returnUrl=@path" title="Sign out as administrator">Sign in</a>
+        <a href="~/login/" title="Sign in as administrator">Sign in</a>
     }
 }

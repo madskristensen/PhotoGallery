@@ -1,9 +1,10 @@
-﻿@page
+﻿@page "{mode?}"
 @model LoginModel
 @{
     ViewData["Title"] = "Login";
     ViewData["Description"] = $"Sign in to the website";
     ViewData["Image"] = "";
+    var referrer = Request.Headers["Referer"];
 }
 
 @section head {
@@ -21,5 +22,6 @@
         <label for="remember">Remember me</label>
 
         <input type="submit" value="Sign in" />
+        <input type="hidden" name="referrer" value="@referrer" />
     </fieldset>
 </form>

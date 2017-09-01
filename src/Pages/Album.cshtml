@@ -1,9 +1,8 @@
 ﻿@page "{name}/{handler?}"
 @model AlbumsModel
-
 @{
     ViewData["Title"] = Model.Album.Name;
-    ViewData["Description"] = $"The photo album \"{Model.Album.Name}\" containing {Model.Album.Photos.Count} photos";
+    ViewData["Description"] = $"The photo album \"{Model.Album.Name}\" containing {Model.Album.Photos.Count} photos including {string.Join(", ", Model.Album.Photos.Take(5))}";
     ViewData["Image"] = Request.Scheme + "://" + Request.Host + Model.Album.CoverPhoto?.GetThumbnailLink((int)ImageType.Full, out int h);
 }
 
