@@ -22,10 +22,11 @@ Username and password: `demo`
   - [Run HTML validator](https://html5.validator.nu/?doc=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
 - Automatic thumbnail generation
 - Responsive web design
+  - [See mobile emulators](https://www.responsinator.com/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2Falbum%2Fwinter%2F)
 - Mobile friendly
   - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=a6_0iisWRO_k_8DN6LMlSw)
 - Responsive image sizes using the `srcset` attribute
-- [Schema.org](http://schema.org/docs/about.html) support with HTML 5 Microdata 
+- Schema.org support with HTML 5 Microdata 
   - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
