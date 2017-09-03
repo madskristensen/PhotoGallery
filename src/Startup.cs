@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
@@ -72,6 +73,11 @@ namespace PhotoGallery
                     context.Context.Response.Headers[HeaderNames.Expires] = DateTime.UtcNow.Add(time).ToString("R");
                 }
             });
+
+            if (Configuration.GetValue<bool>("forcessl"))
+            {
+                app.UseRewriter(new RewriteOptions().AddRedirectToHttps());
+            }
 
             app.UseMvc(routes =>
             {

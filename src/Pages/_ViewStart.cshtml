@@ -9,6 +9,6 @@
 
     if (Context.Request.IsHttps)
     {
-        Context.Response.Headers["Strict-Transport-Security"] = "max-age=63072000";
+        Context.Response.Headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains";
     }
 }
