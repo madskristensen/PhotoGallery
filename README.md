@@ -9,6 +9,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 ## Features
 
 - Elegant masonry layout of images
+- Easy to manage through simple [admin interface](#admin-interface)
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
   - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F)
 - Speed Index < 1000
@@ -29,6 +30,8 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
 - Seach engined optimized
   - [Run SEO Site Checkup](https://seositecheckup.com/seo-audit/gallerytemplate.azurewebsites.net)
+- Secutity HTTP headers set
+  - [Run security scan](https://securityheaders.io/?q=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F&hide=on&followRedirects=on)
 
 ## Admin interface
 When logged in, you can manage the albums and photos easily through a simple-to-use admin bar located under the header on the website.

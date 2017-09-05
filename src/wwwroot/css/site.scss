@@ -80,7 +80,7 @@ a {
         -o-transition: opacity 500ms ease-in-out;
         -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
-        will-change: auto;
+        will-change: opacity;
 
         &.loaded {
             opacity: 1;
