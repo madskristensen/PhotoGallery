@@ -21,7 +21,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
   - [Run HTML validator](https://html5.validator.nu/?doc=https%3A%2F%2Fphotogallery2.azureedge.net)
 - Automatic thumbnail generation
 - Responsive web design
-  - [See mobile emulators](https://auditor.raventools.com/#/s/5jeyidxmo)
+  - [See mobile emulators](https://www.responsinator.com/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2Falbum%2Fwinter%2F)
 - Mobile friendly
   - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=kH6ZnvhvZ8gr0Hkk_NNFJA)
 - Responsive image sizes using the `srcset` attribute
