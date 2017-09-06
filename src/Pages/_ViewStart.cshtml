@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "_Layout.cshtml";
 
+    Context.Response.Headers["Cache-Control"] = $"max-age=0";
+
     // Setting security HTTP headers
     Context.Response.Headers["Content-Security-Policy"] = $"object-src 'none'; form-action 'self'";
     Context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
