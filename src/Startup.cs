@@ -61,7 +61,6 @@ namespace PhotoGallery
             }
 
             app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
-            app.UseAuthentication();
             app.UseWebOptimizer();
 
             app.UseStaticFiles(new StaticFileOptions()
@@ -78,6 +77,8 @@ namespace PhotoGallery
             {
                 app.UseRewriter(new RewriteOptions().AddRedirectToHttps());
             }
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
