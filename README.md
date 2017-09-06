@@ -2,7 +2,7 @@
 
 A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 
-**Demo website**: <https://gallerytemplate.azurewebsites.net/>
+**Demo website**: <https://photogallery2.azureedge.net/>
 
 ![Masonry](art/masonry.jpg "Masonry layout of images")
 
@@ -16,23 +16,23 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - Speed Index < 1000
   - [See WebPageTest](http://www.webpagetest.org/result/170830_XB_c81df8181632a2db8433862f8584ccd8/) 
 - Meets highest accessibility standards 
-  - [Run accessibility validator](http://wave.webaim.org/report#/https://gallerytemplate.azurewebsites.net)
+  - [Run accessibility validator](http://wave.webaim.org/report#/https://photogallery2.azureedge.net)
 - W3C standards compliant HTML and CSS 
-  - [Run HTML validator](https://html5.validator.nu/?doc=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
+  - [Run HTML validator](https://html5.validator.nu/?doc=https%3A%2F%2Fphotogallery2.azureedge.net)
 - Automatic thumbnail generation
 - Responsive web design
-  - [See mobile emulators](https://www.responsinator.com/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2Falbum%2Fwinter%2F)
+  - [See mobile emulators](https://auditor.raventools.com/#/s/5jeyidxmo)
 - Mobile friendly
-  - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=a6_0iisWRO_k_8DN6LMlSw)
+  - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=kH6ZnvhvZ8gr0Hkk_NNFJA)
 - Responsive image sizes using the `srcset` attribute
 - Schema.org support with HTML 5 Microdata 
-  - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net)
+  - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fphotogallery2.azureedge.net)
 - OpenGraph support for Facebook, Twitter, Pinterest and more
-  - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WZdKhbpFzK4)
+  - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fphotogallery2.azureedge.net%2F#.WZdKhbpFzK4)
 - Seach engine optimized
-  - [Run SEO Site Checkup](https://seositecheckup.com/seo-audit/gallerytemplate.azurewebsites.net)
+  - [Run Site Auditor](https://auditor.raventools.com/#/s/5jeyidxmo)
 - Security HTTP headers set
-  - [Run security scan](https://securityheaders.io/?q=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F&hide=on&followRedirects=on)
+  - [Run security scan](https://securityheaders.io/?q=https%3A%2F%2Fphotogallery2.azureedge.net%2F&hide=on&followRedirects=on)
 - Uses the [Azure Image Optimizer](https://github.com/madskristensen/ImageOptimizerWebJob) for superb image compression
 
 ## Admin interface
