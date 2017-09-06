@@ -11,6 +11,10 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - Elegant masonry layout of images
 - Easy to manage through simple [admin interface](#admin-interface)
 - All major browsers fully supported (IE 10+)
+- Follows best practices for web applications
+  - [See DareBoost report (pdf)](art/dareboost-report.pdf)
+
+## Technical features
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
   - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fphotogallery2.azureedge.net%2F)
 - Speed Index < 1000
