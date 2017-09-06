@@ -12,7 +12,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - Easy to manage through simple [admin interface](#admin-interface)
 - All major browsers fully supported (IE 10+)
 - Follows best practices for web applications
-  - [See DareBoost report (pdf)](art/dareboost-report.pdf)
+  - [See DareBoost report](art/dareboost-report.pdf)
 
 ## Technical features
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
