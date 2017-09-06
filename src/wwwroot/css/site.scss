@@ -65,12 +65,7 @@ a {
     }
 }
 
-.pic a {
-    background: #f1f1f1;
-    position: relative;
-    display: block;
-    margin-bottom: 2px;
-
+.pic {
     img {
         display: block;
         width: 100%;
@@ -87,29 +82,36 @@ a {
         }
     }
 
-    &:after {
-        content: attr(data-text);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        font-size: .9em;
-        line-height: 1.7;
-        text-indent: 5px;
-        background: rgba(0, 0, 0, .60);
-        color: $body-bgcolor;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        opacity: 0;
-        -moz-transition: opacity 300ms ease-in-out;
-        -o-transition: opacity 300ms ease-in-out;
-        -webkit-transition: opacity 300ms ease-in-out;
-        transition: opacity 300ms ease-in-out;
-    }
+    a {
+        background: #f1f1f1;
+        position: relative;
+        display: block;
+        margin-bottom: 2px;
 
-    &:hover:after,
-    &:focus:after {
-        opacity: 1;
+        &:after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: .9em;
+            line-height: 1.7;
+            text-indent: 5px;
+            background: rgba(0, 0, 0, .60);
+            color: $body-bgcolor;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0;
+            -moz-transition: opacity 300ms ease-in-out;
+            -o-transition: opacity 300ms ease-in-out;
+            -webkit-transition: opacity 300ms ease-in-out;
+            transition: opacity 300ms ease-in-out;
+        }
+
+        &:hover:after,
+        &:focus:after {
+            opacity: 1;
+        }
     }
 }
 
@@ -151,7 +153,6 @@ a {
 .photo {
     img {
         margin-bottom: 8px;
-        max-width: 100%;
     }
 
     .download {
