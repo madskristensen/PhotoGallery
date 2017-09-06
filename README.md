@@ -12,9 +12,9 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - Easy to manage through simple [admin interface](#admin-interface)
 - All major browsers fully supported (IE 10+)
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
-  - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F)
+  - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fphotogallery2.azureedge.net%2F)
 - Speed Index < 1000
-  - [See WebPageTest](http://www.webpagetest.org/result/170830_XB_c81df8181632a2db8433862f8584ccd8/) 
+  - [See WebPageTest](http://www.webpagetest.org/result/170906_NT_1f4d990ac3bb4fc0ca6d1ff6f0e9813b/) 
 - Meets highest accessibility standards 
   - [Run accessibility validator](http://wave.webaim.org/report#/https://photogallery2.azureedge.net)
 - W3C standards compliant HTML and CSS 
