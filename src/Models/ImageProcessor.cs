@@ -18,7 +18,10 @@ namespace PhotoGallery.Models
 
             var format = GetFormat(filePath);
 
-            using (var image = SKBitmap.Decode(imageStream))
+            using (var inputStream = new SKManagedStream(imageStream))
+            using (var codec = SKCodec.Create(inputStream))
+            using (var original = SKBitmap.Decode(codec))
+            using (var image = HandleOrientation(original, codec.Origin))
             {
                 foreach (ImageType type in Enum.GetValues(typeof(ImageType)))
                 {
@@ -54,6 +57,51 @@ namespace PhotoGallery.Models
             }
 
             return SKEncodedImageFormat.Jpeg;
+        }
+
+        // Got the code from https://stackoverflow.com/a/45620498/1074470
+        private static SKBitmap HandleOrientation(SKBitmap bitmap, SKCodecOrigin orientation)
+        {
+            SKBitmap rotated;
+            switch (orientation)
+            {
+                case SKCodecOrigin.BottomRight:
+
+                    using (var surface = new SKCanvas(bitmap))
+                    {
+                        surface.RotateDegrees(180, bitmap.Width / 2, bitmap.Height / 2);
+                        surface.DrawBitmap(bitmap.Copy(), 0, 0);
+                    }
+
+                    return bitmap;
+
+                case SKCodecOrigin.RightTop:
+                    rotated = new SKBitmap(bitmap.Height, bitmap.Width);
+
+                    using (var surface = new SKCanvas(rotated))
+                    {
+                        surface.Translate(rotated.Width, 0);
+                        surface.RotateDegrees(90);
+                        surface.DrawBitmap(bitmap, 0, 0);
+                    }
+
+                    return rotated;
+
+                case SKCodecOrigin.LeftBottom:
+                    rotated = new SKBitmap(bitmap.Height, bitmap.Width);
+
+                    using (var surface = new SKCanvas(rotated))
+                    {
+                        surface.Translate(0, rotated.Height);
+                        surface.RotateDegrees(270);
+                        surface.DrawBitmap(bitmap, 0, 0);
+                    }
+
+                    return rotated;
+
+                default:
+                    return bitmap;
+            }
         }
     }
 }

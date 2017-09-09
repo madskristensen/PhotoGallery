@@ -46,7 +46,7 @@ namespace PhotoGallery
 
             services.AddWebOptimizer(pipeline =>
             {
-                pipeline.MinifyJsFiles();
+                pipeline.TranspileJavaScriptFiles();
                 pipeline.CompileScssFiles();
             });
         }

@@ -1,14 +1,14 @@
-﻿(function () {
+﻿(() => {
 
     // Button click
-    var form = document.querySelector("form");
+    const form = document.querySelector("form");
 
     if (form) {
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", (e) => {
             var elm = e.target;
 
             if (elm.checkValidity && elm.checkValidity()) {
-                var input = elm.querySelector("input[data-progress]");
+                const input = elm.querySelector("input[data-progress]");
 
                 if (input) {
                     input.disabled = true;
@@ -19,10 +19,10 @@
     }
 
     // Delete album
-    var deletealbum = document.querySelector("#deletealbum");
+    const deletealbum = document.querySelector("#deletealbum");
 
     if (deletealbum) {
-        deletealbum.addEventListener("click", function (e) {
+        deletealbum.addEventListener("click", (e) => {
             if (!confirm("Are you sure you want to delete the album?")) {
                 e.preventDefault();
             }
@@ -30,10 +30,10 @@
     }
 
     // Delete photo
-    var deletephoto = document.querySelector("#deletephoto");
+    const deletephoto = document.querySelector("#deletephoto");
 
     if (deletephoto) {
-        deletephoto.addEventListener("click", function (e) {
+        deletephoto.addEventListener("click", (e) => {
             if (!confirm("Are you sure you want to delete the photo?")) {
                 e.preventDefault();
             }
