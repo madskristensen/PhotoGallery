@@ -1,0 +1,24 @@
+﻿@model string
+@{
+    string currentUrl = Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path;
+    string enc = System.Net.WebUtility.UrlEncode(currentUrl);
+    string text = System.Net.WebUtility.UrlEncode(Model);
+}
+
+<ul class="share-buttons">
+    <li>
+        <a href="https://twitter.com/intent/tweet?source=@enc&text=@text" target="_blank" title="Tweet" rel="noreferrer noopener">
+            <img alt="Tweet" src="~/img/twitter.png" width="32" height="32" />
+        </a>
+    </li>
+    <li>
+        <a href="http://pinterest.com/pin/create/button/?url=@enc&description=@text" target="_blank" title="Pin it" rel="noreferrer noopener">
+            <img alt="Pin it" src="~/img/pinterest.png" width="32" height="32" />
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" title="Share on Facebook" target="_blank" rel="noreferrer noopener">
+            <img alt="Share on Facebook" src="~/img/facebook.png" width="32" height="32" />
+        </a>
+    </li>
+</ul>

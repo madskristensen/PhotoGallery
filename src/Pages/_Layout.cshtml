@@ -26,6 +26,7 @@
 
     <main class="container">
         @RenderBody()
+        @{await Html.RenderPartialAsync("_SocialButtons.cshtml", ViewData["Title"]);}
     </main>
 
     <footer>

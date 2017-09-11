@@ -79,21 +79,22 @@ namespace PhotoGallery.Pages
 
             foreach (var file in files.Where(f => _ac.IsImageFile(f.FileName)))
             {
-                string path = Path.Combine(_environment.WebRootPath, "albums", album.Name, Path.GetFileName(file.FileName));
+                string fileName = Path.GetFileName(file.FileName);
+                string filePath = Path.Combine(_environment.WebRootPath, "albums", album.Name, Path.GetFileName(fileName));
 
-                if (System.IO.File.Exists(path))
+                if (System.IO.File.Exists(filePath))
                 {
-                    path = Path.ChangeExtension(path, file.GetHashCode() + Path.GetExtension(path));
+                    filePath = Path.ChangeExtension(filePath, file.GetHashCode() + Path.GetExtension(filePath));
                 }
 
                 using (var imageStream = file.OpenReadStream())
-                using (var fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
+                using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
                 {
-                    _processor.CreateThumbnails(imageStream, path);
+                    _processor.CreateThumbnails(imageStream, filePath);
                     await file.CopyToAsync(fileStream);
                 }
 
-                var photo = new Photo(album, new FileInfo(path));
+                var photo = new Photo(album, new FileInfo(filePath));
                 album.Photos.Insert(0, photo);
             }
 
