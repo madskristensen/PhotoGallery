@@ -17,9 +17,12 @@
     </form>
 </div>
 
-<div id="title">
+<div id="title" itemscope itemtype="http://schema.org/ListItem">
     <paging model="@Model.Album" />
-    <h2>@Model.Album.Name</h2>
+    <h2 itemscope itemtype="http://schema.org/Thing" itemprop="item">
+        <span itemprop="name">@Model.Album.Name</span>
+    </h2>
+    <meta itemprop="position" content="2" />
 </div>
 
 <div class="pic photolist">

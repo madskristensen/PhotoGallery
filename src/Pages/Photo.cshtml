@@ -17,20 +17,27 @@
     </form>
 </div>
 
-<div id="title">
+<div id="title" itemscope itemtype="http://schema.org/ListItem">
     <paging model="@Model.Photo" />
-    <h2>@Model.Photo.DisplayName</h2>
+    <h2 itemscope itemtype="http://schema.org/Thing" itemprop="item">
+        <span itemprop="name">@Model.Photo.DisplayName</span>
+    </h2>
+    <meta itemprop="position" content="3" />
 </div>
 
 <div class="photo">
     <div class="pic">
         <img photo="@Model.Photo" type="Full" />
+        <meta itemprop="url" content="@(Request.Scheme + "://" + Request.Host + Model.Photo.Album.Link)" />
     </div>
 
-    <aside>
+    <aside itemscope itemtype="http://schema.org/ListItem">
+        <meta itemprop="position" content="2" />
         <span>
             Posted in:
-            <a href="@Model.Photo.Album.Link">@Model.Photo.Album.Name</a>
+            <a href="@Model.Photo.Album.Link" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                <span itemprop="name">@Model.Photo.Album.Name</span>
+            </a>
         </span>
         <a href="@Model.Photo.DownloadLink" class="download">Download</a>
     </aside>
