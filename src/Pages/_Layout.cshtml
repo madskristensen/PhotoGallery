@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/ImageGallery">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
     <title itemprop="name">@ViewData["Title"] - My Photo Gallery</title>
     <meta name="description" content="@ViewData["Description"]" />
@@ -17,11 +17,13 @@
     <link rel="shortcut icon" href="~/img/icon16x16.png" />
     <link rel="apple-touch-icon" href="~/img/icon180x180.png" sizes="180x180" />
 </head>
-<body itemscope itemtype="http://schema.org/BreadcrumbList">
+<body itemscope itemtype="http://schema.org/BreadcrumbList" itemprop="breadcrumb">
     <header>
         <div class="container" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-            <h1 itemscope itemtype="http://schema.org/Thing" itemprop="item">
-                <a href="~/" title="Back to the home page" itemprop="name">My Photo Gallery</a>
+            <h1>
+                <a href="~/" title="Back to the home page" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                    <span itemprop="name">My Photo Gallery</span>
+                </a>
             </h1>
             <meta itemprop="position" content="1" />
         </div>
