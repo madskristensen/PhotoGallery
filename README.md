@@ -31,7 +31,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
   - [Run Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=_iz8MUAbMZ6TqziOOgxISA)
 - Responsive image sizes using the `srcset` attribute
 - Schema.org support with HTML 5 Microdata 
-  - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F)
+  - [Run testing tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2Fphoto%2Fgarden%2Fa%2520couple%2520of%2520squash%2F)
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WbB4bLpFzK4)
 - Seach engine optimized
