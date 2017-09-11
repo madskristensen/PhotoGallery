@@ -53,6 +53,8 @@ namespace PhotoGallery.Pages
                 System.IO.File.Move(file, newThumbnail);
             }
 
+            Photo.Album.Sort();
+
             return new RedirectResult($"~/photo/{WebUtility.UrlEncode(albumName).Replace('+', ' ')}/{newPhoto.DisplayName}/");
 
         }

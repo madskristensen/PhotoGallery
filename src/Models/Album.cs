@@ -76,6 +76,9 @@ namespace PhotoGallery.Models
             }
         }
 
+        /// <summary>
+        /// Sorts the photos in the album.
+        /// </summary>
         public void Sort()
         {
             Photos = Photos.OrderBy(p => p.DisplayName).ToList();

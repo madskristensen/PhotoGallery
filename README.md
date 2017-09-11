@@ -13,7 +13,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - All major browsers fully supported (IE 10+)
 - Social media integration (Facebook, Twitter, Pinterest)
 - Follows best practices for web applications
-  - [See DareBoost report](https://www.dareboost.com/en/report/59b6d2080cf2502fdb8c0c92)
+  - [See DareBoost report](https://www.dareboost.com/en/report/59b6e5510cf2502fdb8c1ad5)
 
 ## Technical features
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
