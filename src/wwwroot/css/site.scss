@@ -168,6 +168,27 @@ a {
         display: inline-block;
         margin-right: .3em;
     }
+
+    a {
+        width: 0;
+        padding-left: 32px;
+        height: 32px;
+        background: url(/img/social-buttons.png) no-repeat;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .twitter {
+        background-position: 0 -42px;
+    }
+
+    .pinterest {
+        background-position: 0 -84px;
+    }
+
+    .facebook {
+        background-position: 0 0;
+    }
 }
 
 footer {
