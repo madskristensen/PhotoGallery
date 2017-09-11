@@ -35,7 +35,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - OpenGraph support for Facebook, Twitter, Pinterest and more
   - [Check the tags](http://opengraphcheck.com/result.php?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F#.WbB4bLpFzK4)
 - Seach engine optimized
-  - [Run Site Auditor](https://auditor.raventools.com/#/s/5jeyidxmo)
+  - [Run SEO Site Checkup](https://seositecheckup.com/seo-audit/gallerytemplate.azurewebsites.net)
 - Security HTTP headers set
   - [Run security scan](https://securityheaders.io/?q=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F&hide=on&followRedirects=on)
 - Uses the [Azure Image Optimizer](https://github.com/madskristensen/ImageOptimizerWebJob) for superb image compression
