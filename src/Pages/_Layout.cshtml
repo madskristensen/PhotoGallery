@@ -17,22 +17,24 @@
     <link rel="shortcut icon" href="~/img/icon16x16.png" />
     <link rel="apple-touch-icon" href="~/img/icon180x180.png" sizes="180x180" />
 </head>
-<body itemscope itemtype="http://schema.org/BreadcrumbList" itemprop="breadcrumb">
-    <header>
-        <div class="container" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-            <h1>
-                <a href="~/" title="Back to the home page" itemscope itemtype="http://schema.org/Thing" itemprop="item">
-                    <span itemprop="name">My Photo Gallery</span>
-                </a>
-            </h1>
-            <meta itemprop="position" content="1" />
-        </div>
-    </header>
+<body>
+    <div itemscope itemtype="http://schema.org/BreadcrumbList" itemprop="breadcrumb">
+        <header>
+            <div class="container" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                <h1>
+                    <a href="~/" title="Back to the home page" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+                        <span itemprop="name">My Photo Gallery</span>
+                    </a>
+                </h1>
+                <meta itemprop="position" content="1" />
+            </div>
+        </header>
 
-    <main class="container">
-        @RenderBody()
-        @{await Html.RenderPartialAsync("_SocialButtons.cshtml", ViewData["Title"]);}
-    </main>
+        <main class="container">
+            @RenderBody()
+            @{await Html.RenderPartialAsync("_SocialButtons.cshtml", ViewData["Title"]);}
+        </main>
+    </div>
 
     <footer>
         <p class="container">
@@ -43,5 +45,8 @@
 
     <script src="/js/site.js" inline></script>
     @RenderSection("scripts", required: false)
+
+    <meta itemprop="description" content="@ViewData["Description"]" />
+    <meta itemprop="image" content="@ViewData["Image"]" />
 </body>
 </html>
