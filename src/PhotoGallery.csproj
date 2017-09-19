@@ -7,10 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Azure.ImageOptimizer" Version="1.0.0.37" />
-        <PackageReference Include="LigerShark.WebOptimizer.Core" Version="1.0.165-beta" />
+        <PackageReference Include="Azure.ImageOptimizer" Version="1.0.0.38" />
+        <PackageReference Include="LigerShark.WebOptimizer.Core" Version="1.0.169-beta" />
         <PackageReference Include="LigerShark.WebOptimizer.Sass" Version="1.0.32-beta" />
-        <PackageReference Include="LigerShark.WebOptimizer.TypeScript" Version="2.5.5-beta" />
+        <PackageReference Include="LigerShark.WebOptimizer.TypeScript" Version="2.5.8-beta" />
         <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
         <PackageReference Include="SkiaSharp" Version="1.59.1" />
     </ItemGroup>

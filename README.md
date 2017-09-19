@@ -19,7 +19,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - High performance. Gets 100/100 points on Google PageSpeed Insights 
   - [Run PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F)
 - Speed Index < 1000
-  - [See WebPageTest](http://www.webpagetest.org/result/170906_HJ_74ec81831f4b73146377a6974e2b4f62/) 
+  - [See WebPageTest](http://www.webpagetest.org/result/170919_G1_c46349f8918b37979f2b23987df4dd35/) 
 - Meets highest accessibility standards 
   - [Run accessibility validator](http://wave.webaim.org/report#/https://gallerytemplate.azurewebsites.net)
 - W3C standards compliant HTML and CSS 
