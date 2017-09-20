@@ -48,6 +48,10 @@ a {
     color: $link-color;
 }
 
+img {
+    border: none;
+}
+
 .title {
     line-height: 2em;
     margin-bottom: .5em;
@@ -69,7 +73,6 @@ a {
     img {
         display: block;
         width: 100%;
-        border: none; /* for IE10 */
         opacity: 0;
         -moz-transition: opacity 500ms ease-in-out;
         -o-transition: opacity 500ms ease-in-out;
@@ -160,35 +163,10 @@ a {
     }
 }
 
-.share-buttons {
-    list-style: none;
-    padding: 0;
-
-    li {
-        display: inline-block;
-        margin-right: .3em;
-    }
-
-    a {
-        width: 0;
-        padding-left: 32px;
-        height: 32px;
-        background: url(/img/social-buttons.png) no-repeat;
-        overflow: hidden;
-        display: inline-block;
-    }
-
-    .twitter {
-        background-position: 0 -42px;
-    }
-
-    .pinterest {
-        background-position: 0 -84px;
-    }
-
-    .facebook {
-        background-position: 0 0;
-    }
+#social {
+    margin-top: 1em;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 footer {

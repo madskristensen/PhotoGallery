@@ -5,20 +5,9 @@
     string text = System.Net.WebUtility.UrlEncode(Model);
 }
 
-<ul class="share-buttons">
-    <li>
-        <a href="https://twitter.com/intent/tweet?source=@enc&text=@text" class="twitter" title="Tweet" target="_blank" rel="noreferrer noopener">
-            Tweet it on Twitter
-        </a>
-    </li>
-    <li>
-        <a href="http://pinterest.com/pin/create/button/?url=@enc&description=@text" class="pinterest" title="Pin it" target="_blank" rel="noreferrer noopener">
-            Pin it on Pinterest
-        </a>
-    </li>
-    <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" class="facebook" title="Share on Facebook" target="_blank" rel="noreferrer noopener">
-            Share on Facebook
-        </a>
-    </li>
-</ul>
+<img id="social" src="~/img/social-buttons.png" width="112" height="31" alt="Social sharing buttons" usemap="#map" />
+<map name="map">
+    <area alt="Facebook" title="Share on Facebook" shape="rect" coords="0,0,32,30" href="https://www.facebook.com/sharer/sharer.php?u=@enc" />
+    <area alt="Twitter" title="Tweet it" shape="rect" coords="40,0,70,30" href="https://twitter.com/intent/tweet?source=@enc&text=@text" />
+    <area alt="Pinterest" title="Pin it" shape="rect" coords="80,0,110,30" href="http://pinterest.com/pin/create/button/?url=@enc&description=@text" />
+</map>
