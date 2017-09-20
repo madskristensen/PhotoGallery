@@ -39,6 +39,7 @@ A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 - Security HTTP headers set
   - [Run security scan](https://securityheaders.io/?q=https%3A%2F%2Fgallerytemplate.azurewebsites.net%2F&hide=on&followRedirects=on)
 - Uses the [Azure Image Optimizer](https://github.com/madskristensen/ImageOptimizerWebJob) for superb image compression
+- Uses a [CDN Tag Helper](https://github.com/madskristensen/WebEssentials.AspNetCore.CdnTagHelpers) to make it easy to serve the images from any CDN.
 
 ## Admin interface
 When logged in, you can manage the albums and photos easily through a simple-to-use admin bar located under the header on the website.
