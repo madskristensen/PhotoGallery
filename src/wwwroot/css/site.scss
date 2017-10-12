@@ -163,8 +163,22 @@ img {
     }
 }
 
-#social {
+.socialsharing {
     margin-top: 1em;
+
+    a {
+        display: inline-block;
+        margin-right: .6em;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+
+        path{
+            fill: gray;
+        }
+    }
 }
 
 footer {
