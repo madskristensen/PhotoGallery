@@ -59,7 +59,14 @@ Rename or delete a photo:
 
 ## How to use
 
-1. Fork and/or clone this repo
-2. Change user settings in `\src\appsettings.json`
-3. Make any modifications you want
-4. Deploy
+On the command line, install the template.
+
+```cmd
+dotnet new --install MadsKristensen.AspNetCore.PhotoGallery
+```
+
+Then run it from any folder.
+
+```cmd
+dotnet new gallery
+```
