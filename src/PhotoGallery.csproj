@@ -3,7 +3,6 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.0</TargetFramework>
         <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
-        <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
     </PropertyGroup>
 
     <ItemGroup>

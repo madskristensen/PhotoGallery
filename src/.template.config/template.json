@@ -1,0 +1,35 @@
+{
+  "author": "Mads Kristensen",
+  "classifications": [ "Web", "MVC" ],
+  "name": "PhotoGallery.Core",
+  "defaultName": "WebApplication1",
+  "identity": "madsk.photogallery.core",
+  "groupIdentity": "madsk.photogallery.core",
+  "shortName": "gallery",
+  "sources": [
+    {
+      "exclude": [ "Properties/**/*", "**/[Bb]in/**", "**/[Oo]bj/**", ".template.config/**/*", "**/*.filelist", "**/*.user", "**/*.lock.json" ]
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "PhotoGallery",
+  "preferNameDirectory": true,
+  "primaryOutputs": [ { "path": "PhotoGallery.csproj" } ],
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "netcoreapp2.0",
+          "description": "Target netcoreapp2.0"
+        }
+      ],
+      "defaultValue": "netcoreapp2.0"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MadsKristensen.AspNetCore.PhotoGallery</id>
+    <title>ASP.NET Core PhotoGallery</title>
+    <summary>A high-performance photo gallery using ASP.NET Core MVC and the latest in client-side technologies.</summary>
+    <version>1.0.0</version>
+    <description>A high-performance photo gallery using ASP.NET Core MVC and the latest in client-side technologies.</description>
+    <authors>Mads Kristensen</authors>
+    <projectUrl>https://github.com/madskristensen/PhotoGallery</projectUrl>
+    <tags>asp.net core .net template</tags>
+    <iconUrl>https://raw.githubusercontent.com/madskristensen/PhotoGallery/master/src/.template.config/icon.png</iconUrl>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+
+  <files>
+    <file src="..\src\**\*.*" exclude="**\bin\**\*;**\obj\**\*;properties\**\*;**\*.user" target="content\PhotoGallery" />
+  </files>
+</package>
