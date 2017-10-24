@@ -2,6 +2,7 @@
 A photo gallery site implemented in ASP.NET Core 2.0 Razor Pages.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ksn9q1viwl64v44d?svg=true)](https://ci.appveyor.com/project/madskristensen/photogallery)
+[![NuGet](https://img.shields.io/nuget/v/MadsKristensen.AspNetCore.PhotoGallery.svg)](https://nuget.org/packages/MadsKristensen.AspNetCore.PhotoGallery/)
 
 **Demo website**: <https://gallerytemplate.azurewebsites.net/>
 
