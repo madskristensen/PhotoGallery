@@ -10,11 +10,13 @@ namespace PhotoGallery.Models
     {
         private IHostingEnvironment _environment;
         private static readonly string[] _extensions = { ".jpg", ".jpeg", ".gif", ".png" };
+        private readonly ImageProcessor _imageProcessor;
 
-        public AlbumCollection(IHostingEnvironment environment)
+        public AlbumCollection(IHostingEnvironment environment, ImageProcessor imageProcessor)
         {
             _environment = environment;
             Albums = new List<Album>();
+            _imageProcessor = imageProcessor;
 
             Initialize(environment.WebRootPath);
         }
@@ -61,7 +63,23 @@ namespace PhotoGallery.Models
             album.Photos.AddRange(photos);
             album.Sort();
 
+            GenerateThumbnails(album);
+
             return album;
+        }
+
+        private void GenerateThumbnails(Album album)
+        {
+            foreach (var photo in album.Photos)
+            {
+                if (String.IsNullOrWhiteSpace(photo.GetThumbnailLink((int)ImageType.Thumbnail, out _)))
+                {
+                    using (var imageStream = File.OpenRead(photo.AbsolutePath))
+                    {
+                        _imageProcessor.CreateThumbnails(imageStream, photo.AbsolutePath);
+                    }
+                }
+            }
         }
     }
 }
